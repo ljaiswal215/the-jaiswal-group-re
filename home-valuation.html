@@ -15,8 +15,8 @@
     .valuation-hero {
       position: relative;
       width: 100%;
-      height: 70vh;
-      min-height: 500px;
+      height: 85vh;
+      min-height: 620px;
       overflow: hidden;
     }
     .valuation-hero-photo {
@@ -42,10 +42,10 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      text-align: center;
-      padding: clamp(2rem, 6vw, 6rem);
+      text-align: left;
+      padding: clamp(2rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
     }
     .valuation-hero-inner .section-eyebrow {
       color: #B38987;
@@ -53,19 +53,99 @@
     }
     .valuation-hero-inner h1 {
       font-family: 'Marcellus', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(1.2rem, 2.6vw, 2.2rem);
       color: #fff;
-      letter-spacing: 0.06em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      white-space: nowrap;
     }
     .valuation-hero-inner p {
       font-family: 'Raleway', sans-serif;
       font-size: 0.95rem;
       color: rgba(255,255,255,0.8);
-      max-width: 560px;
+      max-width: 580px;
       line-height: 1.8;
+      margin-bottom: 0;
     }
+    .hero-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      display: flex;
+      gap: 1.75rem;
+    }
+    .hero-features li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-features li::before {
+      content: '✓';
+      color: #B38987;
+      font-size: 0.95rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .valuation-hero-search {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.32);
+    }
+    .hero-search-input-wrap {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+    .hero-pin-icon {
+      position: absolute;
+      left: 1.25rem;
+      width: 20px;
+      height: 20px;
+      stroke: #B38987;
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+    .valuation-hero-search input {
+      flex: 1;
+      width: 100%;
+      padding: 2rem 1.75rem 2rem 3.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.05rem;
+      color: #18254B;
+      border: none;
+      outline: none;
+      min-width: 0;
+    }
+    .valuation-hero-search input::placeholder {
+      color: rgba(28,48,99,0.4);
+    }
+    .valuation-hero-search button {
+      padding: 2rem 2.5rem;
+      background: #B38987;
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .valuation-hero-search button:hover { background: #1C3063; }
 
     /* ── Main Layout ── */
     .valuation-main {
@@ -371,6 +451,200 @@
       .valuation-step { flex: 0 0 calc(50% - 2rem); }
     }
 
+    /* Google Places dropdown */
+    .pac-container {
+      z-index: 9999;
+      border-top: 2px solid #B38987;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+    .pac-item { padding: 0.5rem 1rem; cursor: pointer; }
+    .pac-item:hover { background: #F3EFE8; }
+    .pac-item-query { font-weight: 600; color: #18254B; }
+
+    /* ── Lead Capture Section ── */
+    .valuation-lead-section {
+      display: none;
+      background: #fff;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
+      border-bottom: 1px solid rgba(28,48,99,0.08);
+    }
+    .vlc-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(28,48,99,0.5);
+      cursor: pointer;
+      margin-bottom: 2rem;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .vlc-back:hover { color: #B38987; }
+    .vlc-inner {
+      display: flex;
+      gap: 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+    .vlc-form-col { flex: 0 0 46%; }
+    .vlc-form-col h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #18254B;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .vlc-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: #6b6460;
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+    #lead-capture-form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .vlc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .vlc-field label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #18254B;
+    }
+    #lead-capture-form input[type="text"],
+    #lead-capture-form input[type="email"],
+    #lead-capture-form input[type="tel"] {
+      width: 100%;
+      padding: 0.6rem 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #18254B;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(28,48,99,0.25);
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    #lead-capture-form input:focus { border-bottom-color: #B38987; }
+    #lead-capture-form input::placeholder { color: rgba(28,48,99,0.3); font-size: 0.85rem; }
+    .vlc-consent-label {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      cursor: pointer;
+      margin-top: -0.25rem;
+    }
+    .vlc-consent-label input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: #B38987;
+    }
+    .vlc-consent-label span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      color: rgba(28,48,99,0.45);
+      line-height: 1.7;
+    }
+    .vlc-consent-label a { color: #B38987; }
+    #lead-capture-form button[type="submit"] {
+      width: 100%;
+      padding: 1.1rem;
+      background: #1C3063;
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    #lead-capture-form button[type="submit"]:hover { background: #18254B; }
+    #lead-capture-form button:disabled { opacity: 0.6; cursor: default; }
+    .vlc-bottom-features {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      gap: 1.75rem;
+    }
+    .vlc-bottom-features li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(28,48,99,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .vlc-bottom-features li::before { content: '✓'; color: #B38987; }
+    .vlc-success {
+      background: #F3EFE8;
+      border-left: 4px solid #B38987;
+      padding: 2rem;
+      display: none;
+    }
+    .vlc-success h3 {
+      font-family: 'Marcellus', serif;
+      font-size: 1.25rem;
+      color: #18254B;
+      margin-bottom: 0.5rem;
+    }
+    .vlc-success p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: #4a4643;
+      line-height: 1.8;
+    }
+    .vlc-map-col { flex: 1; padding-top: 0.5rem; }
+    .vlc-map-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(28,48,99,0.4);
+      margin-bottom: 0.5rem;
+    }
+    .vlc-map-address-text {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #18254B;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    #property-map {
+      width: 100%;
+      height: 320px;
+      border: 1px solid rgba(28,48,99,0.1);
+    }
+    .vlc-how-calc {
+      margin-top: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #1C3063;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .vlc-how-calc a { color: #1C3063; }
+    @media (max-width: 768px) {
+      .vlc-inner { flex-direction: column; gap: 2.5rem; }
+      .vlc-form-col { flex: none; width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -455,12 +729,79 @@
   ========================================================= -->
   <section class="valuation-hero">
     <div class="valuation-hero-photo">
-      <img src="home-valuation.jpg" alt="San Diego home valuation" />
+      <img src="home-valuation.jpg" alt="Carmel Valley home valuation" />
     </div>
     <div class="valuation-hero-inner">
-      <p class="section-eyebrow">The Jaiswal Group Real Estate</p>
-      <h1>WHAT IS YOUR HOME WORTH?</h1>
-      <p>Get a free, personalized home valuation from Lynnette Jaiswal — backed by real San Diego market data, not just an algorithm.</p>
+      <h1>GET YOUR FREE SAN DIEGO HOME VALUATION TODAY</h1>
+      <ul class="hero-features">
+        <li>No automated estimates</li>
+        <li>Real San Diego market data</li>
+        <li>Maximize your sale price</li>
+      </ul>
+      <form class="valuation-hero-search" id="hero-address-form" novalidate>
+        <div class="hero-search-input-wrap">
+          <svg class="hero-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <input type="text" id="hero-address" placeholder="Enter your home address..." autocomplete="street-address" />
+        </div>
+        <button type="submit">GET A FREE HOME VALUATION</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LEAD CAPTURE (shown after hero address entry)
+  ========================================================= -->
+  <section class="valuation-lead-section" id="lead-capture-section">
+    <div class="vlc-inner">
+
+      <!-- Form column -->
+      <div class="vlc-form-col">
+        <button class="vlc-back" id="vlc-back-btn">&#8592; Back to search</button>
+        <h2>GET YOUR INSTANT HOME VALUATION</h2>
+        <p class="vlc-sub">Enter your details to see how much your home is worth.</p>
+
+        <form id="lead-capture-form" action="https://formspree.io/f/mwvjbjey" method="POST">
+          <input type="hidden" name="_subject" value="New Home Valuation Request" />
+          <input type="hidden" name="source" value="Home Valuation Page" />
+          <input type="hidden" name="property_address" id="lc-hidden-address" />
+          <div class="vlc-field">
+            <label for="lc-name">Full Name*</label>
+            <input type="text" id="lc-name" name="full_name" placeholder="Michelle Cunningham" required />
+          </div>
+          <div class="vlc-field">
+            <label for="lc-email">Email*</label>
+            <input type="email" id="lc-email" name="email" placeholder="email@example.com" required />
+          </div>
+          <div class="vlc-field">
+            <label for="lc-phone">Phone*</label>
+            <input type="tel" id="lc-phone" name="phone" placeholder="(858) 000-0000" required />
+          </div>
+          <label class="vlc-consent-label">
+            <input type="checkbox" name="consent" required />
+            <span>I agree to be contacted by The Jaiswal Group Real Estate via call, email, and text regarding my home valuation. To opt out, reply "stop" at any time. <a href="privacy-policy.html">Privacy Policy</a>.</span>
+          </label>
+          <button type="submit">UNLOCK YOUR FREE VALUATION</button>
+          <ul class="vlc-bottom-features">
+            <li>Instant result</li>
+            <li>No obligation</li>
+            <li>Expert advice</li>
+          </ul>
+        </form>
+
+        <div class="vlc-success" id="vlc-success">
+          <h3>Request Received!</h3>
+          <p>Thank you! Lynnette will personally research your property and be in touch within 24 hours with your customized home valuation report.</p>
+        </div>
+      </div>
+
+      <!-- Map column -->
+      <div class="vlc-map-col">
+        <p class="vlc-map-label">Property Address</p>
+        <p class="vlc-map-address-text" id="vlc-map-address"></p>
+        <div id="property-map"></div>
+        <p class="vlc-how-calc"><a href="#how-it-works">HOW WE CALCULATE YOUR ESTIMATE ›</a></p>
+      </div>
+
     </div>
   </section>
 
@@ -702,12 +1043,161 @@
   </footer>
 
   <script>
-    document.getElementById('valuation-form').addEventListener('submit', function(e) {
+    // ── Google Places Autocomplete ──────────────────────────────
+    var _heroSelectedPlace = null;
+
+    function initAutocomplete() {
+      const acOptions = {
+        componentRestrictions: { country: 'us' },
+        types: ['address'],
+        fields: ['formatted_address', 'address_components', 'geometry']
+      };
+
+      // Hero search bar
+      const heroInput = document.getElementById('hero-address');
+      const heroAC = new google.maps.places.Autocomplete(heroInput, acOptions);
+      heroAC.addListener('place_changed', function () {
+        const place = heroAC.getPlace();
+        if (place && place.address_components) {
+          _heroSelectedPlace = place;
+        }
+      });
+
+      // Main form address field
+      const formAddrInput = document.querySelector('.valuation-form input[name="address"]');
+      if (formAddrInput) {
+        const formAC = new google.maps.places.Autocomplete(formAddrInput, acOptions);
+        formAC.addListener('place_changed', function () {
+          const place = formAC.getPlace();
+          if (place && place.address_components) fillCityZip(place.address_components);
+        });
+      }
+    }
+
+    function fillCityZip(components) {
+      let city = '', zip = '';
+      components.forEach(function (c) {
+        if (c.types.includes('locality'))    city = c.long_name;
+        if (c.types.includes('postal_code')) zip  = c.short_name;
+      });
+      const cityEl = document.querySelector('.valuation-form input[name="city"]');
+      const zipEl  = document.querySelector('.valuation-form input[name="zip"]');
+      if (city && cityEl) cityEl.value = city;
+      if (zip  && zipEl)  zipEl.value  = zip;
+    }
+
+    // ── Hero form submit → show lead capture section ────────────
+    document.getElementById('hero-address-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('valuation-success').style.display = 'block';
+      const heroInput = document.getElementById('hero-address');
+      const addr = (_heroSelectedPlace && _heroSelectedPlace.formatted_address)
+                    ? _heroSelectedPlace.formatted_address
+                    : heroInput.value.trim();
+      if (!addr) return;
+      showLeadCapture(addr);
     });
+
+    function showLeadCapture(address) {
+      const section = document.getElementById('lead-capture-section');
+      section.style.display = 'block';
+
+      // Populate address displays
+      document.getElementById('vlc-entered-address').textContent = address;
+      document.getElementById('vlc-map-address').textContent     = address;
+      document.getElementById('lc-hidden-address').value         = address;
+
+      // Scroll into view
+      section.scrollIntoView({ behavior: 'smooth' });
+
+      // Init map after brief delay (let scroll settle)
+      setTimeout(function () { initPropertyMap(address); }, 400);
+
+      // Focus first field
+      setTimeout(function () {
+        const first = document.querySelector('#lead-capture-form input[name="full_name"]');
+        if (first) first.focus();
+      }, 700);
+    }
+
+    // ── Google Map for entered address ──────────────────────────
+    function initPropertyMap(address) {
+      const mapEl = document.getElementById('property-map');
+      if (!mapEl || typeof google === 'undefined') return;
+
+      // Use place geometry if available, otherwise geocode
+      if (_heroSelectedPlace && _heroSelectedPlace.geometry) {
+        renderMap(mapEl, _heroSelectedPlace.geometry.location);
+      } else {
+        new google.maps.Geocoder().geocode({ address: address }, function (results, status) {
+          if (status === 'OK') renderMap(mapEl, results[0].geometry.location);
+        });
+      }
+    }
+
+    function renderMap(mapEl, latLng) {
+      const map = new google.maps.Map(mapEl, {
+        zoom: 15,
+        center: latLng,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+        zoomControl: true,
+      });
+      new google.maps.Marker({ map: map, position: latLng });
+    }
+
+    // ── Lead capture form submit → FormSpree ────────────────────
+    document.getElementById('lead-capture-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = this;
+      const btn  = form.querySelector('button[type="submit"]');
+      btn.textContent = 'SUBMITTING...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('vlc-success').style.display = 'block';
+        } else {
+          btn.textContent = 'UNLOCK YOUR FREE VALUATION';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        btn.textContent = 'UNLOCK YOUR FREE VALUATION';
+        btn.disabled = false;
+      }
+    });
+
+    // ── Back to search button ────────────────────────────────────
+    document.getElementById('vlc-back-btn').addEventListener('click', function () {
+      document.getElementById('lead-capture-section').style.display = 'none';
+      document.getElementById('hero-address').value = '';
+      _heroSelectedPlace = null;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Legacy main form submit (fallback) ──────────────────────
+    const legacyForm = document.getElementById('valuation-form');
+    if (legacyForm) {
+      legacyForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        this.style.display = 'none';
+        document.getElementById('valuation-success').style.display = 'block';
+      });
+    }
   </script>
+
+  <!-- ── Google Maps Places API ─────────────────────────────────
+       Replace AIzaSyC_HDxS74_OAaIzCjeJkhRHOYPlGzAPf2A with your actual key.
+       Enable "Places API" in your Google Cloud Console project.
+  ──────────────────────────────────────────────────────────── -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_HDxS74_OAaIzCjeJkhRHOYPlGzAPf2A&libraries=places&callback=initAutocomplete" async defer></script>
   <script src="main.js"></script>
 </body>
 </html>
