@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>San Diego Home Valuation: What's Your Home Worth? | The Jaiswal Group</title>
+  <meta name="description" content="Zillow doesn't know your kitchen remodel. Learn what a real San Diego home valuation covers, how a CMA works, and when you actually need one." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+
+    /* ── Post Header ── */
+    .post-header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .post-header-photo {
+      position: absolute;
+      inset: 0;
+    }
+    .post-header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    .post-header-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(24,37,75,0.5);
+    }
+    .post-header-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+    .post-header-meta-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.5rem clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+    .post-header h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .post-meta span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      background: #B38987;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Post Body ── */
+    .post-body {
+      background: #F6F6F4;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+    .post-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* ── Snippet Answer Box ── */
+    .post-snippet {
+      background: #fff;
+      border-left: 4px solid #B38987;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-snippet strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.5rem;
+    }
+    .post-snippet p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #322E2D;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Post Content Typography ── */
+    .post-content p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: #3a3634;
+      margin-bottom: 1.25rem;
+    }
+    .post-content h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: #18254B;
+      letter-spacing: 0.05em;
+      margin: 2.5rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(179,137,135,0.25);
+    }
+    .post-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1C3063;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .post-content a {
+      color: #B38987;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content a:hover { color: #1C3063; }
+    .post-content ul {
+      margin: 0.5rem 0 1.25rem 1.25rem;
+    }
+    .post-content ul li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #3a3634;
+      margin-bottom: 0.4rem;
+    }
+    .post-content strong { color: #18254B; }
+
+    /* ── Divider ── */
+    .post-divider {
+      width: 50px;
+      height: 1px;
+      background: #B38987;
+      margin: 2.5rem 0;
+    }
+
+    /* ── FAQ Section ── */
+    .post-faq {
+      background: #fff;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-faq h2 {
+      font-family: 'Marcellus', serif;
+      font-size: 1.4rem;
+      color: #18254B;
+      margin-bottom: 1.5rem;
+      border: none;
+      padding: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(179,137,135,0.2);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1C3063;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #3a3634;
+      margin: 0;
+    }
+
+    /* ── Author CTA ── */
+    .post-author-cta {
+      background: #18254B;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .post-author-cta p.eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.75rem;
+    }
+    .post-author-cta h3 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .post-author-cta p.body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+
+    /* ── Back to Blog ── */
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .post-back:hover { gap: 0.7rem; }
+
+    /* ── Post Navigation ── */
+    .post-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(28,48,99,0.12);
+      margin-bottom: 2rem;
+    }
+    .post-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1C3063;
+      text-decoration: none;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .post-nav-link:hover { gap: 0.7rem; color: #B38987; }
+
+    @media (max-width: 600px) {
+      .post-faq { padding: 1.5rem; }
+      .post-author-cta { padding: 2rem 1.5rem; }
+    }
+
+  </style>
+</head>
+<body class="light-hero">
+
+  <!-- =========================================================
+       HEADER / NAV
+  ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="../logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">BUY A HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Featured Listings</a></li>
+            <li><a href="#">Search for Homes</a></li>
+            <li><a href="#">New Construction</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+            <li><a href="#">Buyer FAQ</a></li>
+            <li><a href="#">Mortgage Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Seller Consultation</a></li>
+            <li><a href="../home-valuation.html">Instant Home Valuation</a></li>
+            <li><a href="#">Our Marketing</a></li>
+            <li><a href="#">Seller's Guide</a></li>
+            <li><a href="#">Selling Checklist</a></li>
+          </ul>
+        </li>
+        <li><a href="#">COMMUNITIES</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li class="has-dropdown">
+          <a href="#">RESOURCES <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Market Updates</a></li>
+            <li><a href="#">The Plugged In Method</a></li>
+            <li><a href="#">Recommended Lenders</a></li>
+            <li><a href="#">Relocation Guide</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">ABOUT US <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Lynnette Jaiswal</a></li>
+            <li><a href="../testimonials.html">Client Reviews</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#">Buy a Home</a></li>
+        <li><a href="#">Sell Your Home</a></li>
+        <li><a href="#">Communities</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+  <section class="post-header">
+    <div class="post-header-photo">
+      <img src="../home-valuation.jpg" alt="San Diego home valuation — kitchen interior" />
+    </div>
+    <div class="post-header-inner">
+      <h1>What's My San Diego Home Really Worth?</h1>
+    </div>
+    <div class="post-header-meta-bar">
+      <div class="post-meta">
+        <span>Lynnette Jaiswal</span>
+        <span class="post-meta-dot"></span>
+        <span>The Jaiswal Group Real Estate</span>
+        <span class="post-meta-dot"></span>
+        <span>San Diego, CA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       POST BODY
+  ========================================================= -->
+  <div class="post-body">
+    <div class="post-container">
+
+      <a href="blog.html" class="post-back">&#8592; Back to Blog</a>
+
+      <!-- Quick Answer Snippet -->
+      <div class="post-snippet">
+        <strong>What is a San Diego home valuation?</strong>
+        <p>A San Diego home valuation is a professional estimate of what your property would sell for in today's market, based on recent comparable sales, current conditions, and your home's unique features — not a one-size-fits-all algorithm.</p>
+      </div>
+
+      <!-- Post Content -->
+      <div class="post-content">
+
+        <p>You've probably checked Zillow at some point. Maybe you check it regularly. And while it's tempting to treat that number as gospel, the reality is that automated estimates — Zestimates, Redfin Estimates, and similar tools — are working with limited information. They pull from public records, tax data, and broad market trends. What they can't see is the kitchen you renovated last year, the fact that your home backs to a private preserve instead of a busy street, or that your specific floor plan commands a premium in your neighborhood.</p>
+
+        <p>In San Diego's market — where homes in the same zip code can vary by hundreds of thousands of dollars depending on lot, view, condition, and finishes — the gap between an algorithm's guess and reality can be significant. <a href="https://www.zillow.com/zestimate/" target="_blank" rel="noopener">Zillow acknowledges on their own site</a> that Zestimates carry a notably higher error rate for off-market homes than for homes actively listed. In a market where even a modest variance on a $1.5M home can mean six figures off, that's not a rounding error — it's a real financial consequence.</p>
+
+        <p>Here's what a real home valuation actually looks like, when you need one, and how to make sure you're working with a number you can trust.</p>
+
+        <h2>What Is a Home Valuation?</h2>
+
+        <p>A home valuation is an informed estimate of your property's current market value. There are a few types, and knowing the difference matters.</p>
+
+        <h3>Comparative Market Analysis (CMA)</h3>
+
+        <p>A Comparative Market Analysis — or CMA — is what a licensed real estate agent prepares to help you understand what your home is worth in today's market. It's the most common valuation tool for homeowners considering selling, and it's what we use at The Jaiswal Group.</p>
+
+        <p>A CMA examines:</p>
+        <ul>
+          <li><strong>Recent comparable sales</strong> — homes similar to yours that have sold in the last 90–180 days in your neighborhood</li>
+          <li><strong>Active listings</strong> — what your competition is currently priced at</li>
+          <li><strong>Pending sales</strong> — homes under contract, which signal where the market is heading right now</li>
+          <li><strong>Your home's specific condition, upgrades, and features</strong> — the details an algorithm simply cannot see</li>
+        </ul>
+
+        <p>A well-prepared CMA isn't just a spreadsheet. It requires local knowledge — understanding which streets command premiums, which floor plans buyers prefer in your area, and what today's buyers are actually willing to pay.</p>
+
+        <h3>Professional Appraisal</h3>
+
+        <p>A licensed appraiser conducts a formal property appraisal, typically required by lenders when you're refinancing or a buyer is financing a purchase. Appraisals follow guidelines set by <a href="https://www.fanniemae.com/research-and-insights/appraisal-matters" target="_blank" rel="noopener">Fannie Mae and Freddie Mac</a> and result in a detailed written report. While thorough, appraisals aren't always the right tool for a seller setting a list price — they reflect value at a point in time but don't account for the strategic positioning an experienced agent brings to pricing.</p>
+
+        <h3>Automated Valuation Models (AVMs)</h3>
+
+        <p>These are the Zillow Zestimates and Redfin Estimates of the world. They're convenient, free, and fine as a ballpark orientation — but not a pricing strategy. Zillow's own accuracy data shows these tools perform better on actively listed homes than off-market ones, and they simply cannot factor in condition, recent renovations, or the nuances that make one home more desirable than another in the same neighborhood.</p>
+
+        <h2>When Do You Actually Need a Home Valuation?</h2>
+
+        <p>You don't have to be ready to sell to benefit from knowing your home's value. Here are four situations where a current valuation makes sense:</p>
+
+        <p><strong>1. You're thinking about selling.</strong> This is the most important time to have an accurate number. Overpricing a listing in San Diego's market leads to extended days on market, price reductions, and ultimately a lower final sale price than if it had been priced correctly from day one. A personal CMA gives you a realistic, defensible number to anchor your strategy.</p>
+
+        <p><strong>2. You're refinancing.</strong> Lenders use your home's appraised value to determine your loan-to-value ratio. Knowing your approximate value before you refinance helps you understand whether you'll qualify for the rate and terms you're targeting.</p>
+
+        <p><strong>3. You've made significant improvements.</strong> If you've renovated your kitchen, added square footage, or made other major upgrades, your value has likely shifted meaningfully. A current valuation helps you understand your updated equity position.</p>
+
+        <p><strong>4. You're planning financially.</strong> Whether you're thinking about pulling equity for another investment, updating an estate plan, or simply want to know where you stand, a current home valuation is a foundational piece of the picture.</p>
+
+        <h2>Why San Diego Requires Local Expertise</h2>
+
+        <p>San Diego isn't one market — it's dozens of micro-markets. A home in Carmel Valley behaves differently from a comparable-sized home in Rancho Peñasquitos or Del Sur, even if the square footage and age are nearly the same. The buyer demand, lot premiums, and competitive landscape shift in ways that only someone working in those markets daily can fully account for.</p>
+
+        <p>At The Jaiswal Group Real Estate, every home valuation is built on real, current sales data from the neighborhoods we know best — including Carmel Valley, Pacific Highlands Ranch, Del Sur, Rancho Santa Fe, and communities throughout North San Diego County. No automated estimates. Just honest, research-backed analysis from an agent active in your market right now.</p>
+
+        <p>According to the <a href="https://www.nar.realtor/research-and-statistics" target="_blank" rel="noopener">National Association of Realtors</a>, sellers who work with a professional agent consistently net more on their home sale than those who go it alone — and accurate pricing from day one is one of the biggest factors in that outcome.</p>
+
+      </div>
+
+      <div class="post-divider"></div>
+
+      <div class="post-nav-bar">
+        <a href="blog-post-san-diego-pros-cons.html" class="post-nav-link">&#8592; Previous Post</a>
+        <a href="blog.html" class="post-nav-link">All Posts &#8594;</a>
+      </div>
+
+      <!-- FAQ -->
+      <div class="post-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <strong>How accurate are Zillow estimates in San Diego?</strong>
+          <p>Zillow's Zestimate can be a useful starting point, but accuracy varies significantly. Zillow's own published data shows off-market homes carry a higher median error rate than homes actively listed for sale. In high-value markets like San Diego, even a modest percentage variance can translate to tens of thousands of dollars — which is why a personalized CMA from a local agent is always the more reliable basis for any real decision.</p>
+        </div>
+        <div class="faq-item">
+          <strong>How long does a home valuation take in San Diego?</strong>
+          <p>A Comparative Market Analysis from a local agent typically takes 24–48 hours to prepare and is delivered at no cost and with no obligation. It includes an analysis of recent comparable sales, current listings, and your home's specific features — not a computer-generated estimate.</p>
+        </div>
+        <div class="faq-item">
+          <strong>How often should I get a home valuation in San Diego?</strong>
+          <p>If you're actively considering selling, a fresh valuation every 90 days keeps your strategy current — San Diego's market moves, and so does your home's value. For general planning purposes, once a year is a reasonable baseline to stay informed about your equity position.</p>
+        </div>
+      </div>
+
+      <!-- Author CTA -->
+      <div class="post-author-cta">
+        <p class="eyebrow">Curious What Your Home Is Worth?</p>
+        <h3>Get Your Free San Diego Home Valuation</h3>
+        <p class="body">No automated tools, no guesswork — just real San Diego market data and honest analysis delivered to your inbox within 24 hours. I'd love to help you understand exactly where you stand.</p>
+        <a href="../home-valuation.html" class="btn btn-outline-light">GET YOUR FREE VALUATION</a>
+        <p style="margin-top:1.25rem; font-family:'Raleway',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.5); letter-spacing:0.05em;">
+          Lynnette Jaiswal &nbsp;|&nbsp; (858) 663-4896 &nbsp;|&nbsp; The Jaiswal Group Real Estate
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       WORK WITH US
+  ========================================================= -->
+  <section class="work-with-us">
+    <div class="wwu-content">
+      <h2>WORK WITH US</h2>
+      <p>Choosing the right representation matters.</p>
+      <p>At The Jaiswal Group Real Estate, every client receives a tailored, concierge-level approach — from exclusive opportunities and strategic negotiation to responsive communication and thoughtful guidance throughout every step of the process.</p>
+      <p>Our goal is simple: to help you feel confident, informed, and well-supported from beginning to end.</p>
+      <p>Every client relationship is personal, intentional, and backed by a team that genuinely cares about your goals and outcome.</p>
+      <p>Let's explore what's possible.</p>
+      <a href="../contact.html" class="btn btn-primary">CONTACT US</a>
+    </div>
+    <div class="wwu-photo">
+      <img src="../Lynnette-torreypinesbackground.jpg" alt="Lynnette Jaiswal, The Jaiswal Group Real Estate" />
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-info-col footer-info-col--logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" />
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p>
+          <p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p>
+          <p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem; white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem; white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">EMAIL</p>
+          <p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p>
+        </div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">PHONE</p>
+          <p><a href="tel:8586634896">(858) 663-4896</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="../logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="../logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="../logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; 2026 The Jaiswal Group Real Estate</span>
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="#">Site Map</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

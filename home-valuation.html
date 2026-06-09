@@ -383,6 +383,87 @@
     }
 
     /* ── How It Works Strip ── */
+    /* ── Why Personal Beats Online ── */
+    .valuation-why-personal {
+      background: #fff;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
+      text-align: center;
+      border-top: 1px solid rgba(28,48,99,0.07);
+    }
+    .vwp-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .vwp-inner h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: #18254B;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .vwp-body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #4a4643;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .vwp-compare {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      max-width: 680px;
+      margin: 0 auto;
+      border: 1px solid rgba(28,48,99,0.1);
+    }
+    .vwp-col {
+      flex: 1;
+      padding: 2rem 2.25rem;
+      text-align: left;
+    }
+    .vwp-col--online { background: #fafafa; }
+    .vwp-col--personal { background: #F3EFE8; }
+    .vwp-col h4 {
+      font-family: 'Marcellus', serif;
+      font-size: 1rem;
+      color: #18254B;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .vwp-col--online h4 { color: rgba(28,48,99,0.45); }
+    .vwp-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .vwp-col li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .vwp-col--online li { color: rgba(28,48,99,0.5); }
+    .vwp-col--online li::before { content: '✕'; color: rgba(28,48,99,0.25); font-size: 0.75rem; margin-top: 1px; }
+    .vwp-col--personal li { color: #18254B; }
+    .vwp-col--personal li::before { content: '✓'; color: #B38987; font-size: 0.75rem; margin-top: 1px; font-weight: 700; }
+    .vwp-divider {
+      width: 1px;
+      background: rgba(28,48,99,0.1);
+      flex-shrink: 0;
+    }
+    @media (max-width: 560px) {
+      .vwp-compare { flex-direction: column; }
+      .vwp-divider { width: 100%; height: 1px; }
+    }
+
     .valuation-steps {
       background: #F3EFE8;
       padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
@@ -848,18 +929,50 @@
       </div>
       <div class="valuation-step">
         <div class="valuation-step-num">2</div>
-        <h4>Lynnette Reviews</h4>
-        <p>Lynnette personally analyzes recent sales, active listings, and your home's unique attributes.</p>
+        <h4>Expert Market Analysis</h4>
+        <p>We personally review your home's features, recent comparable sales, and neighborhood trends — the kind of nuanced insight no automated tool can replicate.</p>
       </div>
       <div class="valuation-step">
         <div class="valuation-step-num">3</div>
         <h4>Receive Your CMA</h4>
-        <p>You'll receive a detailed Comparative Market Analysis — typically within 24 hours.</p>
+        <p>You'll receive a detailed Comparative Market Analysis delivered straight to your inbox — typically within 24 hours.</p>
       </div>
       <div class="valuation-step">
         <div class="valuation-step-num">4</div>
         <h4>Let's Talk Strategy</h4>
         <p>We'll connect to discuss your results and explore the best path forward for your goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       WHY PERSONAL BEATS ONLINE
+  ========================================================= -->
+  <section class="valuation-why-personal">
+    <div class="vwp-inner">
+      <p class="section-eyebrow">The Difference</p>
+      <h2>WHY A PERSONAL VALUATION BEATS AN ONLINE ESTIMATE</h2>
+      <p class="vwp-body">Zillow, Redfin, and other automated tools work from public data and broad algorithms — they can't see your upgraded kitchen, your custom built-ins, or the quiet cul-de-sac that buyers are willing to pay a premium for. Studies show these estimates can miss the mark by <strong>5–15%</strong> or more, which on a San Diego home can mean six figures of difference. A personal valuation from The Jaiswal Group accounts for your home's specific features, real current buyer demand, and local market nuance — giving you an accurate number you can actually make decisions with.</p>
+      <div class="vwp-compare">
+        <div class="vwp-col vwp-col--online">
+          <h4>Online Estimates</h4>
+          <ul>
+            <li>Based on public records &amp; algorithms</li>
+            <li>Cannot account for upgrades or condition</li>
+            <li>Often 5–15% off from actual value</li>
+            <li>No local market context</li>
+          </ul>
+        </div>
+        <div class="vwp-divider"></div>
+        <div class="vwp-col vwp-col--personal">
+          <h4>Personal CMA</h4>
+          <ul>
+            <li>Built on real, recent comparable sales</li>
+            <li>Accounts for your home's unique features</li>
+            <li>Reflects current buyer demand</li>
+            <li>Local expertise you can trust</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
