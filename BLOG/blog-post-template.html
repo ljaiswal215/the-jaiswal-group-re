@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+    SEO — FILL IN FOR EACH POST
+    - Title: keep under 60 characters
+    - Description: keep under 155 characters, include keywords
+  ============================================================ -->
+  <title>[POST TITLE] | The Jaiswal Group Real Estate</title>
+  <meta name="description" content="[ONE SENTENCE SUMMARY OF THE POST — include your main keyword and San Diego]" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+
+    /* ── Post Header ── */
+    .post-header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .post-header-photo {
+      position: absolute;
+      inset: 0;
+    }
+    .post-header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%; /* Adjust % to reposition image — lower % = show more top */
+      display: block;
+    }
+    .post-header-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(24,37,75,0.45);
+    }
+    .post-header-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+    .post-header-meta-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.5rem clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+    .post-header h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .post-meta span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      background: #B38987;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Post Body ── */
+    .post-body {
+      background: #F6F6F4;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+    .post-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* ── Video Embed ── */
+    .post-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1C3063;
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .post-video-play {
+      width: 64px;
+      height: 64px;
+      background: rgba(179,137,135,0.2);
+      border: 2px solid #B38987;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .post-video-play svg {
+      width: 24px;
+      height: 24px;
+      fill: #B38987;
+      margin-left: 4px;
+    }
+    .post-video p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+    }
+
+    /* ── Snippet Answer Box ── */
+    .post-snippet {
+      background: #fff;
+      border-left: 4px solid #B38987;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-snippet strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.5rem;
+    }
+    .post-snippet p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #322E2D;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Post Content Typography ── */
+    .post-content p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: #3a3634;
+      margin-bottom: 1.25rem;
+    }
+    .post-content h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: #18254B;
+      letter-spacing: 0.05em;
+      margin: 2.5rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(179,137,135,0.25);
+    }
+    .post-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1C3063;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .post-content a {
+      color: #B38987;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content a:hover { color: #1C3063; }
+
+    /* ── Divider ── */
+    .post-divider {
+      width: 50px;
+      height: 1px;
+      background: #B38987;
+      margin: 2.5rem 0;
+    }
+
+    /* ── FAQ Section ── */
+    .post-faq {
+      background: #fff;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-faq h2 {
+      font-family: 'Marcellus', serif;
+      font-size: 1.4rem;
+      color: #18254B;
+      margin-bottom: 1.5rem;
+      border: none;
+      padding: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(179,137,135,0.2);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1C3063;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #3a3634;
+      margin: 0;
+    }
+
+    /* ── Author CTA ── */
+    .post-author-cta {
+      background: #18254B;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .post-author-cta p.eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.75rem;
+    }
+    .post-author-cta h3 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .post-author-cta p.body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+
+    /* ── Back to Blog (top) ── */
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .post-back:hover { gap: 0.7rem; }
+
+    /* ── Post Navigation (bottom) ── */
+    .post-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(28,48,99,0.12);
+      margin-bottom: 2rem;
+    }
+    .post-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1C3063;
+      text-decoration: none;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .post-nav-link:hover { gap: 0.7rem; color: #B38987; }
+
+    @media (max-width: 600px) {
+      .post-faq { padding: 1.5rem; }
+      .post-author-cta { padding: 2rem 1.5rem; }
+    }
+
+  </style>
+</head>
+<body class="light-hero">
+
+  <!-- =========================================================
+       HEADER / NAV — do not edit
+  ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="../logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">BUY A HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Featured Listings</a></li>
+            <li><a href="#">Search for Homes</a></li>
+            <li><a href="#">New Construction</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+            <li><a href="#">Buyer FAQ</a></li>
+            <li><a href="#">Mortgage Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Seller Consultation</a></li>
+            <li><a href="#">Instant Home Valuation</a></li>
+            <li><a href="#">Our Marketing</a></li>
+            <li><a href="#">Seller's Guide</a></li>
+            <li><a href="#">Selling Checklist</a></li>
+          </ul>
+        </li>
+        <li><a href="#">COMMUNITIES</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li class="has-dropdown">
+          <a href="#">RESOURCES <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Market Updates</a></li>
+            <li><a href="#">The Plugged In Method</a></li>
+            <li><a href="#">Recommended Lenders</a></li>
+            <li><a href="#">Relocation Guide</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">ABOUT US <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Lynnette Jaiswal</a></li>
+            <li><a href="../testimonials.html">Client Reviews</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#">Buy a Home</a></li>
+        <li><a href="#">Sell Your Home</a></li>
+        <li><a href="#">Communities</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO — FILL IN: image filename + post title
+       - Replace [HERO-IMAGE.jpg] with your image filename
+       - Replace [POST TITLE] with your post headline
+       - Use <br> to force a line break in the title if needed
+       - Adjust object-position % in the CSS above to reframe the image
+  ========================================================= -->
+  <section class="post-header">
+    <div class="post-header-photo">
+      <img src="[HERO-IMAGE.jpg]" alt="[Image description for accessibility and SEO]" />
+    </div>
+    <div class="post-header-inner">
+      <h1>[POST TITLE]</h1>
+    </div>
+    <div class="post-header-meta-bar">
+      <div class="post-meta">
+        <span>Lynnette Jaiswal</span>
+        <span class="post-meta-dot"></span>
+        <span>The Jaiswal Group Real Estate</span>
+        <span class="post-meta-dot"></span>
+        <span>San Diego, CA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       POST BODY
+  ========================================================= -->
+  <div class="post-body">
+    <div class="post-container">
+
+      <!-- Back to Blog — top link, do not remove -->
+      <a href="blog.html" class="post-back">&#8592; Back to Blog</a>
+
+      <h1 class="post-title">[POST TITLE]</h1>
+
+      <!-- ── VIDEO EMBED ──────────────────────────────────────
+           If this post has a YouTube video, replace the
+           placeholder div below with your iframe embed code.
+           Example:
+           <iframe width="100%" height="100%"
+             src="https://www.youtube.com/embed/VIDEO_ID"
+             title="[POST TITLE]" frameborder="0"
+             allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture"
+             allowfullscreen></iframe>
+
+           If NO video, delete this entire .post-video block.
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-video">
+        <div class="post-video-placeholder">
+          <div class="post-video-play">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <p>Video coming soon</p>
+        </div>
+      </div>
+
+      <!-- ── QUICK ANSWER SNIPPET ─────────────────────────────
+           This is the first thing Google and AI search engines
+           read. Write a bold question + a 1-2 sentence answer.
+           Keep the answer under 250 characters.
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-snippet">
+        <strong>[Restate your main question here — e.g. "What is it like to live in San Diego?"]</strong>
+        <p>[Your concise 1-2 sentence answer. Include the main keyword and location. Under 250 characters.]</p>
+      </div>
+
+      <!-- ── POST CONTENT ─────────────────────────────────────
+           Write your post below using:
+           <h2> for main section headings
+           <h3> for sub-headings
+           <p> for paragraphs
+           <a href="URL"> for links (link to sources!)
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-content">
+
+        <h2>[First Main Section Heading]</h2>
+        <p>[Your paragraph text here. Aim for 2–4 sentences per paragraph.]</p>
+        <p>[Another paragraph. Keep it readable and conversational.]</p>
+
+        <h2>[Second Main Section Heading]</h2>
+        <p>[Paragraph text.]</p>
+
+        <h3>[Sub-heading if needed]</h3>
+        <p>[Paragraph text.]</p>
+
+        <!-- Add as many h2/h3/p sections as needed -->
+
+      </div>
+
+      <div class="post-divider"></div>
+
+      <!-- ── POST NAVIGATION ──────────────────────────────────
+           Update these links each time you publish a new post:
+           - "Previous Post" → link to the post BEFORE this one
+           - "Next Post" → link to the post AFTER this one
+           If no previous/next post exists yet, link to blog.html
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-nav-bar">
+        <a href="blog.html" class="post-nav-link">&#8592; Previous Post</a>
+        <a href="blog.html" class="post-nav-link">Next Post &#8594;</a>
+      </div>
+
+      <!-- ── FAQ ──────────────────────────────────────────────
+           Add 2-3 Q&As that reflect common search questions
+           about your topic. These feed Google's "People Also Ask"
+           and AI search engines directly.
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <strong>[Question 1 — phrase it as a real search query]</strong>
+          <p>[Answer in 2-3 sentences.]</p>
+        </div>
+        <div class="faq-item">
+          <strong>[Question 2]</strong>
+          <p>[Answer in 2-3 sentences.]</p>
+        </div>
+        <div class="faq-item">
+          <strong>[Question 3]</strong>
+          <p>[Answer in 2-3 sentences.]</p>
+        </div>
+      </div>
+
+      <!-- ── AUTHOR CTA ────────────────────────────────────────
+           Customize the eyebrow, headline, and body copy
+           to match the topic of this post.
+      ─────────────────────────────────────────────────────── -->
+      <div class="post-author-cta">
+        <p class="eyebrow">[Short eyebrow — e.g. "Ready to Make Your Move?"]</p>
+        <h3>[CTA Headline — e.g. "Let's Find Your Home in San Diego"]</h3>
+        <p class="body">[2-3 sentences connecting the post topic to working with Lynnette. Warm, personal tone.]</p>
+        <a href="../contact.html" class="btn btn-outline-light">GET IN TOUCH</a>
+        <p style="margin-top:1.25rem; font-family:'Raleway',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.5); letter-spacing:0.05em;">
+          Lynnette Jaiswal &nbsp;|&nbsp; (858) 663-4896 &nbsp;|&nbsp; The Jaiswal Group Real Estate
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       WORK WITH US — do not edit
+  ========================================================= -->
+  <section class="work-with-us">
+    <div class="wwu-content">
+      <h2>WORK WITH US</h2>
+      <p>Choosing the right representation matters.</p>
+      <p>At The Jaiswal Group Real Estate, every client receives a tailored, concierge-level approach — from exclusive opportunities and strategic negotiation to responsive communication and thoughtful guidance throughout every step of the process.</p>
+      <p>Our goal is simple: to help you feel confident, informed, and well-supported from beginning to end.</p>
+      <p>Every client relationship is personal, intentional, and backed by a team that genuinely cares about your goals and outcome.</p>
+      <p>Let's explore what's possible.</p>
+      <a href="../contact.html" class="btn btn-primary">CONTACT US</a>
+    </div>
+    <div class="wwu-photo">
+      <img src="../Lynnette-torreypinesbackground.jpg" alt="Lynnette Jaiswal, The Jaiswal Group Real Estate" />
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER — do not edit
+  ========================================================= -->
+  <footer class="site-footer">
+
+    <!-- Footer contact info row -->
+    <div class="footer-info">
+
+      <!-- Logo column -->
+      <div class="footer-info-col footer-info-col--logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" />
+      </div>
+
+      <!-- Office Address -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p>
+          <p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p>
+          <p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem; white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem; white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">EMAIL</p>
+          <p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">PHONE</p>
+          <p><a href="tel:8586634896">(858) 663-4896</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="../logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="../logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="../logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; 2026 The Jaiswal Group Real Estate</span>
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="#">Site Map</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@lynnettejaiswalrealtor" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lynnettejaiswalrealtor/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://g.page/r/CadNwKvRi2DDEBM/review" aria-label="Google Reviews" class="footer-social-text" target="_blank" rel="noopener">G</a>
+        <a href="https://www.zillow.com/profile/Lynnette%20Jaiswal" aria-label="Zillow" class="footer-social-text" target="_blank" rel="noopener">Z</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

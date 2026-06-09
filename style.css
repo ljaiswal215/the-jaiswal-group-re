@@ -68,6 +68,27 @@ h1, h2, h3 { font-family: 'Marcellus', serif; font-weight: 400; line-height: 1.1
 .btn-outline:hover { background: rgba(255,255,255,0.15); }
 .btn-outline-light { background: transparent; color: #F6F6F4; border-color: #F6F6F4; }
 .btn-outline-light:hover { background: #B38987; border-color: #B38987; color: #fff; }
+
+/* ── DESIGN RULE: Buttons on navy/dark backgrounds always use btn-outline-light ──
+   On cream/white/light backgrounds use btn-primary (filled navy).
+   This rule auto-enforces btn-outline-light inside any navy section. ── */
+.mailing-list .btn,
+.post-author-cta .btn,
+.reviews-cta .btn,
+.site-footer .btn,
+.hero .btn {
+  background: transparent;
+  color: #F6F6F4;
+  border-color: #F6F6F4;
+}
+.mailing-list .btn:hover,
+.post-author-cta .btn:hover,
+.reviews-cta .btn:hover,
+.site-footer .btn:hover {
+  background: #B38987;
+  border-color: #B38987;
+  color: #fff;
+}
 .btn-hero { background: transparent; color: #F6F6F4; border-color: #F6F6F4; }
 .btn-hero:hover { background: #18254B; color: #B38987; border-color: #18254B; }
 .btn-ghost { background: transparent; color: #1C3063; border-color: #1C3063; }
@@ -818,47 +839,38 @@ h1, h2, h3 { font-family: 'Marcellus', serif; font-weight: 400; line-height: 1.1
   margin: 0 auto;
 }
 .eir-card {
-  background: white;
-  border: 1px solid rgba(28,48,99,0.08);
+  position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.35s;
 }
-.eir-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.eir-card:hover { transform: translateY(-3px); }
 .eir-card-img {
   width: 100%;
-  height: 280px;
+  height: 400px;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
-.eir-card:hover .eir-card-img { transform: scale(1.04); }
+.eir-card:hover .eir-card-img { transform: scale(1.05); }
 .eir-card-body {
-  padding: 1.8rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem 1.5rem 1.75rem;
+  background: linear-gradient(to top, rgba(18,37,75,0.9) 0%, rgba(18,37,75,0.15) 65%, transparent 100%);
   text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .eir-card h3 {
   font-family: 'Marcellus', serif;
-  color: #1C3063;
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 0;
+  line-height: 1.25;
 }
-.eir-link {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #B38987;
-  text-transform: uppercase;
-  transition: letter-spacing 0.2s;
-}
-.eir-link:hover { letter-spacing: 0.22em; }
 
 @media (max-width: 768px) { .eir-grid { grid-template-columns: 1fr; } }
 

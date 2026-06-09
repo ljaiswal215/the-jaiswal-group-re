@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deciding to Buy a Home in San Diego | The Jaiswal Group Real Estate</title>
+  <meta name="description" content="Thinking about buying a home in San Diego? Lynnette Jaiswal walks you through the key questions, timelines, and steps to help you decide with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── Hero ── */
+    .page-hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 500px;
+      overflow: hidden;
+    }
+    .page-hero-photo { position: absolute; inset: 0; }
+    .page-hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%; display: block;
+    }
+    .page-hero-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(24,37,75,0.3) 0%, rgba(24,37,75,0.75) 100%);
+    }
+    .page-hero-inner {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+    .page-hero-inner .section-eyebrow { color: #B38987; margin-bottom: 1rem; }
+    .page-hero-inner h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff; letter-spacing: 0.06em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .page-hero-inner p {
+      font-family: 'Raleway', sans-serif; font-size: 0.95rem;
+      color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.8;
+    }
+
+
+    /* ── Buyer Timeline ── */
+    .buyer-timeline {
+      background: #F3EFE8;
+      padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+    .buyer-timeline h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: rgba(28,48,99,0.45);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .timeline-track {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      right: 22px;
+      height: 2px;
+      background: rgba(28,48,99,0.12);
+      z-index: 0;
+    }
+    .timeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      padding: 0 0.25rem;
+    }
+    .timeline-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #1C3063;
+      border: 2px solid #B38987;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Marcellus', serif;
+      font-size: 1rem;
+      color: #B38987;
+      margin-bottom: 0.75rem;
+      flex-shrink: 0;
+    }
+    .timeline-step.active .timeline-num {
+      background: #B38987;
+      border-color: #B38987;
+      color: #fff;
+    }
+    .timeline-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(28,48,99,0.45);
+      line-height: 1.4;
+      max-width: 80px;
+    }
+    .timeline-step.active .timeline-label {
+      color: #1C3063;
+    }
+
+    @media (max-width: 860px) {
+      .timeline-track {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+      .timeline-track::before {
+        top: 22px;
+        bottom: 22px;
+        left: 22px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+      .timeline-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+        padding: 0.6rem 0;
+        flex: none;
+        width: 100%;
+      }
+      .timeline-num { margin-bottom: 0; flex-shrink: 0; }
+      .timeline-label { max-width: none; }
+    }
+
+    /* ── Milestone Content ── */
+    .milestone-section {
+      background: #F6F6F4;
+      padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 2.5vw, 2.5rem);
+    }
+    .milestone-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.75rem, 2vw, 2.5rem);
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .milestone-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .milestone-panel {
+      display: none;
+    }
+    .milestone-panel.active {
+      display: block;
+    }
+    .milestone-panel h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: #18254B;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(179,137,135,0.3);
+    }
+    .milestone-panel p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.92rem;
+      color: #4a4643;
+      line-height: 1.95;
+      margin-bottom: 1rem;
+    }
+    .milestone-panel h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .milestone-panel ul {
+      margin: 0.25rem 0 1.25rem 1.25rem;
+      padding: 0;
+    }
+    .milestone-panel ul li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.92rem;
+      color: #4a4643;
+      line-height: 1.85;
+      margin-bottom: 0.35rem;
+      list-style: none;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .milestone-panel ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #B38987;
+    }
+    .milestone-side-arrow {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 1.5px solid rgba(28,48,99,0.25);
+      border-radius: 50%;
+      cursor: pointer;
+      color: #1C3063;
+      transition: color 0.2s, border-color 0.2s;
+      align-self: center;
+    }
+    .milestone-side-arrow:hover:not(:disabled) {
+      color: #B38987;
+      border-color: #B38987;
+    }
+    .milestone-side-arrow:disabled {
+      color: rgba(28,48,99,0.18);
+      border-color: rgba(28,48,99,0.1);
+      cursor: default;
+    }
+    .milestone-side-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 480px) {
+      .milestone-side-arrow { width: 38px; height: 38px; }
+      .milestone-side-arrow svg { width: 16px; height: 16px; }
+    }
+
+    /* ── Timeline clickable ── */
+    .timeline-step { cursor: pointer; }
+    .timeline-step:hover .timeline-num {
+      background: rgba(179,137,135,0.3);
+      border-color: #B38987;
+    }
+
+    @media (max-width: 860px) {
+      .milestone-row { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">BUY A HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="deciding-to-buy.html">Deciding to Buy</a></li>
+            <li><a href="#">Search for Homes</a></li>
+            <li><a href="#">New Construction</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+            <li><a href="#">Mortgage Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="deciding-to-sell.html">Deciding to Sell</a></li>
+            <li><a href="home-valuation.html">Instant Home Valuation</a></li>
+            <li><a href="#">Our Marketing</a></li>
+            <li><a href="#">Seller's Guide</a></li>
+          </ul>
+        </li>
+        <li><a href="#">COMMUNITIES</a></li>
+        <li><a href="BLOG/blog.html">BLOG</a></li>
+        <li class="has-dropdown">
+          <a href="#">RESOURCES <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Market Updates</a></li>
+            <li><a href="#">The Plugged In Method</a></li>
+            <li><a href="#">Relocation Guide</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">ABOUT US <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Lynnette Jaiswal</a></li>
+            <li><a href="testimonials.html">Client Reviews</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="deciding-to-buy.html">Deciding to Buy</a></li>
+        <li><a href="deciding-to-sell.html">Deciding to Sell</a></li>
+        <li><a href="#">Communities</a></li>
+        <li><a href="BLOG/blog.html">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-photo">
+      <img src="deciding-to-buy.jpg" alt="Deciding to buy a home in San Diego" />
+    </div>
+    <div class="page-hero-inner">
+      <h1>Buying a Home in San Diego, CA</h1>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <div class="buyer-timeline">
+    <h2>The Home Buying Journey</h2>
+    <div class="timeline-track">
+      <div class="timeline-step active">
+        <div class="timeline-num">1</div>
+        <div class="timeline-label">Define Your Goals</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">2</div>
+        <div class="timeline-label">Prepare Financially</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">3</div>
+        <div class="timeline-label">Choose a Real Estate Agent</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">4</div>
+        <div class="timeline-label">Search for Homes</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">5</div>
+        <div class="timeline-label">Offers</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">6</div>
+        <div class="timeline-label">Contingencies</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">7</div>
+        <div class="timeline-label">Under Contract</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">8</div>
+        <div class="timeline-label">Closing Day</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-num">9</div>
+        <div class="timeline-label">Stay in Touch</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONE CONTENT -->
+  <div class="milestone-section">
+    <div class="milestone-row">
+
+    <button class="milestone-side-arrow" id="prev-step" onclick="changeStep(-1)" aria-label="Previous step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="milestone-content" id="milestone-content">
+
+      <!-- Step 1 -->
+      <div class="milestone-panel active" data-step="1">
+        <h2>Define Your Goals</h2>
+        <p>San Diego's real estate market remains one of the most desirable — and competitive — in the country. Whether you're purchasing your first home, relocating to San Diego, or searching for a home that better supports your lifestyle, the right time to buy is ultimately when it feels right for you.</p>
+        <p>That means being financially prepared, emotionally ready, and partnered with a trusted advisor who can help you navigate the process strategically and confidently.</p>
+        <p>Before beginning your home search, it's important to think through both your immediate needs and long-term goals.</p>
+        <p><strong>How long do you plan to stay?</strong> Buying often makes the most sense when you plan to remain in the home for at least 3–5 years, allowing time for appreciation and helping offset the costs associated with buying and selling.</p>
+        <p><strong>What does your ideal lifestyle look like?</strong> From coastal living and walkable neighborhoods to school districts, commute preferences, and outdoor lifestyle amenities, San Diego offers a wide range of communities — each with its own unique character and appeal.</p>
+        <p>Our role is to help you identify not just the right home, but the right fit for the life you want to build.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="milestone-panel" data-step="2">
+        <h2>Prepare Financially</h2>
+        <p>Before beginning your home search, it's important to have a clear understanding of both your budget and overall financial comfort level. In San Diego's competitive market, preparation creates confidence — and helps set you up for success when the right opportunity appears.</p>
+        <p><strong>Are you financially ready?</strong> Have you reviewed your credit, saved for a down payment, and spoken with a lender about pre-approval? In today's market, strong financing is essential before submitting an offer.</p>
+        <p><strong>Do you understand the full cost of ownership?</strong> Beyond the mortgage itself, homeownership may also include property taxes, insurance, HOA fees, maintenance, utilities, and future improvements. Our goal is to help you understand the full picture before falling in love with a home.</p>
+        <p>We're happy to connect you with trusted lending partners who can help you explore financing options and secure competitive pre-approval — so you're fully prepared and positioned to move confidently when the right home comes along.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="milestone-panel" data-step="3">
+        <h2>Choose a Real Estate Agent</h2>
+        <p>In today's market, who you work with matters. Buying a home involves far more than simply touring properties — it requires strategy, local market knowledge, strong negotiation skills, clear communication, and guidance you can genuinely trust throughout the process.</p>
+        <p>In a competitive market like San Diego, your agent's relationships, responsiveness, and ability to navigate complex negotiations can often make the difference between securing the right home and missing the opportunity altogether.</p>
+        <p>At The Jaiswal Group Real Estate, we believe every client deserves a highly personalized experience tailored to their goals, lifestyle, timeline, and communication style. We begin with a thoughtful buyer consultation designed to fully understand your vision, priorities, and long-term goals so we can create a focused and intentional strategy built specifically around you.</p>
+        <p>As you consider who to partner with, here are a few things that matter most:</p>
+        <ul>
+          <li>Local market expertise and neighborhood knowledge</li>
+          <li>Strong communication and responsiveness</li>
+          <li>Strategic negotiation skills</li>
+          <li>Experience navigating competitive situations</li>
+          <li>Honest guidance and thoughtful advice</li>
+          <li>A personalized approach centered around your goals</li>
+        </ul>
+        <p>Lynnette has been recognized among the Top 3% of REALTORS® in San Diego County each year since 2019 and holds over a dozen professional designations, including the Master Certified Negotiation Expert (MCNE) designation — bringing both strategic expertise and personalized guidance to every client experience.</p>
+        <p>Real estate is never just a transaction — it's a major life decision. Choosing the right representation can make all the difference in both your experience and your outcome.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="milestone-panel" data-step="4">
+        <h2>Search for Homes</h2>
+        <p>Once you've built a strong foundation and feel prepared financially, the search becomes far more intentional. In San Diego's housing market, preparation, strategy, and access can make all the difference.</p>
+        <p>We go beyond what's publicly available online. Through agent relationships, private networks, off-market opportunities, and early access to upcoming listings, we help clients discover homes others simply don't have access to.</p>
+        <p>Every showing is purposeful. We're not simply touring homes — we're evaluating each property through the lens of your lifestyle, priorities, long-term goals, and future resale potential.</p>
+        <p>In many of San Diego's most desirable communities, well-positioned homes can move quickly and attract multiple offers. Being prepared means understanding your priorities, having financing in place, and having a clear strategy when the right opportunity presents itself.</p>
+        <p>Throughout the search, we stay focused on one thing: keeping you informed, well-guided, and genuinely confident in every decision you make.</p>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="milestone-panel" data-step="5">
+        <h2>Offers</h2>
+        <p>Once the right home is identified, the strategy becomes just as important as the property itself.</p>
+        <p>In San Diego's housing market, writing a strong offer is rarely just about price. Terms, timing, contingencies, presentation, communication, and negotiation strategy all play a critical role in positioning your offer competitively while still protecting your best interests.</p>
+        <p>Every offer we write is thoughtfully tailored to the specific property, seller motivations, and current market conditions. We take the time to evaluate comparable sales, analyze value, discuss potential competition, and develop a strategy designed to give you the strongest possible position.</p>
+        <p>Clear communication and strong relationships with listing agents can often make a meaningful difference throughout the negotiation process. Our approach is always professional, strategic, and solutions-oriented — helping clients navigate competitive situations with confidence rather than emotion.</p>
+        <p>Before submitting any offer, we walk through every detail together so you fully understand pricing strategy, contingencies, timelines, and overall terms. The goal is never simply to "win" a home, but to help you make a smart and informed investment decision that aligns with your long-term goals.</p>
+        <p>When the right opportunity presents itself, the right guidance at precisely the right moment turns preparation into results.</p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="milestone-panel" data-step="6">
+        <h2>Contingencies</h2>
+        <p>Understanding contingencies is an important part of navigating the home buying process. Contingencies are protective clauses built into your purchase contract designed to help safeguard your deposit and provide time for due diligence throughout the transaction.</p>
+        <p>The most common contingencies in a San Diego real estate transaction include the <strong>inspection contingency</strong>, which allows you to evaluate the property's condition; the <strong>appraisal contingency</strong>, which helps protect you if the home appraises below the agreed purchase price; and the <strong>loan contingency</strong>, which ensures your financing is fully approved before moving forward.</p>
+        <p>While contingencies are designed to protect buyers, every situation — and every property — is different. In more competitive situations, buyers are sometimes encouraged to shorten or waive certain contingencies in order to strengthen their offer. These decisions should never be made lightly.</p>
+        <p>We believe informed clients make confident decisions. We take the time to walk through the purpose, risks, timing, and implications of each contingency so you fully understand your options before moving forward.</p>
+        <p>Balancing opportunity with protection is one of the most nuanced parts of any transaction — and it's where having an experienced advocate in your corner matters most.</p>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="milestone-panel" data-step="7">
+        <h2>Under Contract</h2>
+        <p>Once your offer is accepted, escrow officially opens — and the transaction begins moving toward closing. This is where timelines, disclosures, inspections, financing, negotiations, and critical contract deadlines all come together.</p>
+        <p>Escrow is often the most detail-heavy part of the transaction, which is why experienced guidance, proactive communication, and strong organization matter so much during this stage.</p>
+        <p>At The Jaiswal Group Real Estate, we coordinate closely with escrow, title, lenders, inspectors, and the listing side to help ensure every detail stays on track from contract to closing.</p>
+        <h3>Understanding Escrow</h3>
+        <p>Escrow is a neutral third-party process designed to protect both the buyer and seller throughout the transaction. During escrow, deposits are securely held, title is reviewed, disclosures are delivered, inspections are completed, financing moves through underwriting, and all contractual obligations are satisfied before ownership officially transfers.</p>
+        <p>This phase of the transaction requires constant communication, careful attention to timelines, and strategic decision-making as new information becomes available.</p>
+        <h3>Inspections &amp; Due Diligence</h3>
+        <p>Once in escrow, buyers typically have the opportunity to conduct inspections and fully evaluate the property's condition. A licensed home inspector will assess the home from roof to foundation, including major systems such as plumbing, electrical, HVAC, appliances, and overall functionality.</p>
+        <p>Depending on the property, additional inspections may also be recommended, including sewer, roof, chimney, structural, mold, pool, or termite evaluations.</p>
+        <p>Inspection reports can often feel overwhelming at first. We help you interpret findings, prioritize concerns, and determine which items warrant further investigation, negotiation, repairs, or seller credits.</p>
+        <p>We also help buyers carefully review seller disclosures, HOA documents, inspection reports, and property history so there are no surprises after closing.</p>
+        <p>The goal is never perfection — it's clarity, confidence, and informed decision-making.</p>
+        <h3>Appraisals &amp; Financing</h3>
+        <p>If financing is involved, your lender will order an appraisal to confirm the property's market value. The appraiser evaluates the home based on comparable sales, location, condition, upgrades, and current market data.</p>
+        <p>If the appraisal comes in at value, the transaction continues moving forward as planned. If challenges arise, we help navigate the next steps strategically and collaboratively with all parties involved.</p>
+        <p>Throughout escrow, we remain in close communication with your lender and escrow team to help ensure financing, documentation, and deadlines stay on schedule.</p>
+        <h3>Property Insurance</h3>
+        <p>Property insurance is an important — and sometimes overlooked — part of the home buying process. In today's California insurance landscape, securing coverage is not always as simple as it once was, particularly in certain areas, older homes, high fire-risk zones, coastal properties, or homes with unique features.</p>
+        <p>Because insurance availability and pricing can vary significantly from property to property, we encourage buyers to begin exploring insurance options early in escrow rather than waiting until the last minute.</p>
+        <p>In addition to satisfying lender requirements, the right insurance coverage plays a critical role in protecting your investment long after closing. Factors such as replacement cost coverage, deductibles, water damage protection, wildfire exposure, and liability coverage should all be carefully considered when evaluating policies.</p>
+        <p>We work closely with trusted local insurance professionals who understand the nuances of the San Diego market and can help guide you toward the right coverage for your property and lifestyle needs.</p>
+        <p>The goal is simple: no surprises — so you can move forward with the right coverage in place and genuine confidence in your investment.</p>
+        <h3>Final Walkthrough</h3>
+        <p>Before closing, we'll conduct a final walkthrough to verify the property's condition and confirm that agreed-upon repairs or terms have been completed.</p>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="milestone-panel" data-step="8">
+        <h2>Closing Day</h2>
+        <p>Closing day is the finish line, and one of the most exciting moments in the entire process. You'll sign final documents, your lender will fund the loan, and ownership of the property will officially transfer to you.</p>
+        <p>While much of the heavy lifting happens during escrow, there are still important details, timelines, and final steps that take place leading up to closing. We're here to ensure this final stage feels organized, smooth, and as stress-free as possible — so you can focus on the excitement ahead.</p>
+        <h3>Signing &amp; Funding</h3>
+        <p>As closing approaches, escrow and your lender will coordinate final loan documents, settlement statements, and wiring instructions. We help guide you through the timeline, what to expect, and the final steps needed to successfully fund and close your transaction.</p>
+        <p>Whether documents are signed in person, remotely, or while traveling, we work closely with all parties involved to help keep everything on track and properly coordinated.</p>
+        <h3>Utilities, Insurance &amp; Moving Preparation</h3>
+        <p>Prior to closing, buyers should begin preparing for utilities, homeowner's insurance activation, moving logistics, address changes, and any services needed for the property.</p>
+        <p>We're happy to provide trusted local resources and recommendations to help make your transition as seamless as possible.</p>
+        <h3>The Finish Line</h3>
+        <p>Even in the final days before closing, unexpected details can occasionally arise. Our job is to proactively manage communication, problem-solve quickly, and help navigate any last-minute issues that may come up before ownership officially transfers.</p>
+        <p>From lender coordination and funding confirmations to recording and key delivery, we carefully oversee every final detail so you can move into your new home feeling informed, supported, and confident every step of the way.</p>
+        <p><strong>Congratulations — you're a homeowner!</strong></p>
+      </div>
+
+      <!-- Step 9 -->
+      <div class="milestone-panel" data-step="9">
+        <h2>Stay in Touch</h2>
+        <p>Buying a home is a major milestone — but our relationship doesn't end at closing.</p>
+        <p>Long after closing, we remain a trusted resource for our clients. Whether you need recommendations for local vendors, guidance on renovations or improvements, market updates, investment advice, or simply have questions about homeownership, we're always just a phone call away.</p>
+        <p>Real estate is never just about the transaction — it's about relationships, trust, and helping our clients feel supported long after the move-in day excitement has passed.</p>
+        <p>We're grateful to be part of such an important chapter in your life and look forward to staying connected for years to come.</p>
+      </div>
+
+    </div><!-- end milestone-content -->
+
+    <button class="milestone-side-arrow" id="next-step" onclick="changeStep(1)" aria-label="Next step">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    </div><!-- end milestone-row -->
+  </div><!-- end milestone-section -->
+
+  <!-- WORK WITH US -->
+  <section class="work-with-us">
+    <div class="wwu-content">
+      <h2>WORK WITH US</h2>
+      <p>Choosing the right representation matters.</p>
+      <p>At The Jaiswal Group Real Estate, every client receives a tailored, concierge-level approach — from exclusive opportunities and strategic negotiation to responsive communication and thoughtful guidance throughout every step of the process.</p>
+      <p>Our goal is simple: to help you feel confident, informed, and well-supported from beginning to end.</p>
+      <p>Every client relationship is personal, intentional, and backed by a team that genuinely cares about your goals and outcome.</p>
+      <p>Let's explore what's possible.</p>
+      <a href="contact.html" class="btn btn-primary">CONTACT US</a>
+    </div>
+    <div class="wwu-photo">
+      <img src="Lynnette-torreypinesbackground.jpg" alt="Lynnette Jaiswal, The Jaiswal Group Real Estate" />
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Footer contact info row -->
+    <div class="footer-info">
+
+      <!-- Logo column -->
+      <div class="footer-info-col footer-info-col--logo">
+        <img src="LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" />
+      </div>
+
+      <!-- Office Address -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p>
+          <p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p>
+          <p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem; white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem; white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">EMAIL</p>
+          <p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">PHONE</p>
+          <p><a href="tel:8586634896">(858) 663-4896</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; 2026 The Jaiswal Group Real Estate</span>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="#">Site Map</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@lynnettejaiswalrealtor" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lynnettejaiswalrealtor/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://g.page/r/CadNwKvRi2DDEBM/review" aria-label="Google Reviews" class="footer-social-text" target="_blank" rel="noopener">G</a>
+        <a href="https://www.zillow.com/profile/Lynnette%20Jaiswal" aria-label="Zillow" class="footer-social-text" target="_blank" rel="noopener">Z</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 9;
+
+    function changeStep(direction) {
+      goToStep(currentStep + direction);
+    }
+
+    function goToStep(step) {
+      if (step < 1 || step > totalSteps) return;
+
+      // Update panels
+      document.querySelectorAll('.milestone-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector(`.milestone-panel[data-step="${step}"]`).classList.add('active');
+
+      // Update timeline
+      document.querySelectorAll('.timeline-step').forEach((el, i) => {
+        el.classList.toggle('active', i + 1 === step);
+      });
+
+      // Update arrow states
+      document.getElementById('prev-step').disabled = step === 1;
+      document.getElementById('next-step').disabled = step === totalSteps;
+
+      currentStep = step;
+
+      // Scroll to milestone section smoothly
+      document.querySelector('.milestone-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Make timeline steps clickable
+    document.querySelectorAll('.timeline-step').forEach((el, i) => {
+      el.addEventListener('click', () => goToStep(i + 1));
+    });
+
+    // Init disabled state
+    document.getElementById('prev-step').disabled = true;
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

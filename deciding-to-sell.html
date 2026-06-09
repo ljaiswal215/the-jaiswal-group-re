@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deciding to Sell Your San Diego Home | The Jaiswal Group Real Estate</title>
+  <meta name="description" content="Thinking about selling your home in San Diego? Lynnette Jaiswal shares what to consider, how to prepare, and how to get the best price in today's market." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── Hero ── */
+    .page-hero {
+      position: relative; width: 100%; height: 70vh; min-height: 500px; overflow: hidden;
+    }
+    .page-hero-photo { position: absolute; inset: 0; }
+    .page-hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block;
+    }
+    .page-hero-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(24,37,75,0.3) 0%, rgba(24,37,75,0.75) 100%);
+    }
+    .page-hero-inner {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; padding: clamp(2rem, 6vw, 6rem);
+    }
+    .page-hero-inner .section-eyebrow { color: #B38987; margin-bottom: 1rem; }
+    .page-hero-inner h1 {
+      font-family: 'Marcellus', serif; font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff; letter-spacing: 0.06em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .page-hero-inner p {
+      font-family: 'Raleway', sans-serif; font-size: 0.95rem;
+      color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.8;
+    }
+
+    /* ── Shared Layout Styles ── */
+    .page-intro {
+      padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6rem);
+      display: flex; gap: 4rem; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .page-intro-text { flex: 1; }
+    .page-intro-text h2 {
+      font-family: 'Marcellus', serif; font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: #18254B; letter-spacing: 0.05em; margin-bottom: 1rem;
+    }
+    .page-intro-text p {
+      font-family: 'Raleway', sans-serif; font-size: 0.9rem;
+      color: #4a4643; line-height: 1.9; margin-bottom: 1rem;
+    }
+    .page-intro-stats {
+      flex: 0 0 280px; display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .page-stat {
+      background: #fff; padding: 1.25rem 1.5rem; border-left: 3px solid #B38987;
+    }
+    .page-stat-num {
+      font-family: 'Marcellus', serif; font-size: 1.8rem; color: #18254B; line-height: 1;
+    }
+    .page-stat-label {
+      font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #6b6460; margin-top: 0.25rem;
+    }
+    .page-section { padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6rem); max-width: 1200px; margin: 0 auto; }
+    .page-section-header { text-align: center; margin-bottom: 3rem; }
+    .page-section-header h2 {
+      font-family: 'Marcellus', serif; font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: #18254B; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .page-section-header p {
+      font-family: 'Raleway', sans-serif; font-size: 0.88rem;
+      color: #6b6460; max-width: 580px; margin: 0 auto;
+    }
+    .questions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .question-card {
+      background: #F6F6F4; padding: 1.75rem; border-top: 3px solid #1C3063;
+    }
+    .question-card h3 {
+      font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #1C3063; margin-bottom: 0.75rem;
+    }
+    .question-card p {
+      font-family: 'Raleway', sans-serif; font-size: 0.85rem;
+      color: #4a4643; line-height: 1.8; margin: 0;
+    }
+
+    /* ── Seller Advantage Strip ── */
+    .advantage-strip {
+      background: #F3EFE8;
+      padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6rem);
+    }
+    .advantage-strip .page-section-header { margin-bottom: 2.5rem; }
+    .advantage-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .advantage-card {
+      background: #fff; padding: 2rem 1.5rem; text-align: center;
+    }
+    .advantage-card-icon {
+      width: 48px; height: 48px; background: rgba(179,137,135,0.12);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 1rem;
+    }
+    .advantage-card-icon svg {
+      width: 20px; height: 20px; stroke: #B38987; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .advantage-card h3 {
+      font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #1C3063; margin-bottom: 0.6rem;
+    }
+    .advantage-card p {
+      font-family: 'Raleway', sans-serif; font-size: 0.83rem;
+      color: #6b6460; line-height: 1.8; margin: 0;
+    }
+
+    /* ── Steps ── */
+    .steps-section {
+      background: #18254B;
+      padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6rem);
+    }
+    .steps-inner { max-width: 1100px; margin: 0 auto; }
+    .steps-section .page-section-header h2 { color: #fff; }
+    .steps-section .page-section-header p { color: rgba(255,255,255,0.65); }
+    .steps-list { display: flex; flex-direction: column; gap: 0; }
+    .step-item {
+      display: flex; gap: 2rem; align-items: flex-start;
+      padding: 1.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      flex: 0 0 48px; height: 48px;
+      background: rgba(179,137,135,0.2); border: 1px solid #B38987;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Marcellus', serif; font-size: 1.1rem; color: #B38987;
+    }
+    .step-content h3 {
+      font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #fff; margin-bottom: 0.4rem;
+    }
+    .step-content p {
+      font-family: 'Raleway', sans-serif; font-size: 0.85rem;
+      color: rgba(255,255,255,0.65); line-height: 1.8; margin: 0;
+    }
+
+    /* ── CTA ── */
+    .page-cta {
+      padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6rem);
+      display: flex; gap: 3rem; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .page-cta-text { flex: 1; }
+    .page-cta-text h2 {
+      font-family: 'Marcellus', serif; font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: #18254B; margin-bottom: 1rem;
+    }
+    .page-cta-text p {
+      font-family: 'Raleway', sans-serif; font-size: 0.9rem;
+      color: #4a4643; line-height: 1.9; margin-bottom: 1rem;
+    }
+    .page-cta-form { flex: 0 0 380px; }
+    .page-cta-form input {
+      width: 100%; padding: 0.85rem 1rem;
+      font-family: 'Raleway', sans-serif; font-size: 0.88rem; color: #18254B;
+      background: #fff; border: 1px solid rgba(28,48,99,0.2); outline: none;
+      margin-bottom: 0.75rem; box-sizing: border-box; transition: border-color 0.2s;
+    }
+    .page-cta-form input:focus { border-color: #B38987; }
+    .page-cta-form input::placeholder { color: rgba(28,48,99,0.4); }
+    .page-cta-form button {
+      width: 100%; padding: 0.9rem; background: #1C3063; color: #F6F6F4;
+      font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #1C3063;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .page-cta-form button:hover { background: #18254B; color: #B38987; border-color: #18254B; }
+    .consent-text {
+      font-family: 'Raleway', sans-serif; font-size: 0.7rem;
+      color: rgba(28,48,99,0.45); line-height: 1.7; margin-top: 0.5rem;
+    }
+    .consent-text a { color: #B38987; }
+    .cta-success {
+      display: none; background: #F3EFE8; border-left: 4px solid #B38987; padding: 1.5rem;
+    }
+    .cta-success h4 { font-family: 'Marcellus', serif; color: #18254B; margin-bottom: 0.5rem; }
+    .cta-success p { font-family: 'Raleway', sans-serif; font-size: 0.85rem; color: #4a4643; line-height: 1.8; margin: 0; }
+
+    @media (max-width: 860px) {
+      .page-intro { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
+      .page-intro-stats { flex: none; width: 100%; flex-direction: row; flex-wrap: wrap; }
+      .page-stat { flex: 1; min-width: 140px; }
+      .questions-grid { grid-template-columns: 1fr; }
+      .advantage-grid { grid-template-columns: 1fr; }
+      .page-cta { flex-direction: column; gap: 2rem; }
+      .page-cta-form { flex: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">BUY A HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="deciding-to-buy.html">Deciding to Buy</a></li>
+            <li><a href="#">Search for Homes</a></li>
+            <li><a href="#">New Construction</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+            <li><a href="#">Mortgage Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="deciding-to-sell.html">Deciding to Sell</a></li>
+            <li><a href="home-valuation.html">Instant Home Valuation</a></li>
+            <li><a href="#">Our Marketing</a></li>
+            <li><a href="#">Seller's Guide</a></li>
+          </ul>
+        </li>
+        <li><a href="#">COMMUNITIES</a></li>
+        <li><a href="BLOG/blog.html">BLOG</a></li>
+        <li class="has-dropdown">
+          <a href="#">RESOURCES <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Market Updates</a></li>
+            <li><a href="#">The Plugged In Method</a></li>
+            <li><a href="#">Relocation Guide</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">ABOUT US <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Lynnette Jaiswal</a></li>
+            <li><a href="testimonials.html">Client Reviews</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="deciding-to-buy.html">Deciding to Buy</a></li>
+        <li><a href="deciding-to-sell.html">Deciding to Sell</a></li>
+        <li><a href="#">Communities</a></li>
+        <li><a href="BLOG/blog.html">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-photo">
+      <img src="deciding-to-sell.jpg" alt="Deciding to sell your home in San Diego" />
+    </div>
+    <div class="page-hero-inner">
+      <p class="section-eyebrow">Seller Resources</p>
+      <h1>DECIDING TO SELL</h1>
+      <p>Selling your home is a major financial decision. The right strategy — and the right agent — can mean tens of thousands of dollars difference in your final outcome.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <div style="background:#F3EFE8;">
+    <div class="page-intro">
+      <div class="page-intro-text">
+        <h2>Is Now the Right Time for You to Sell?</h2>
+        <p>San Diego remains one of the most sought-after real estate markets in the country. Limited inventory, strong demand, and consistently appreciating values mean that well-prepared sellers continue to achieve exceptional results.</p>
+        <p>But timing, preparation, and pricing strategy matter enormously. Lynnette's approach ensures your home is positioned to attract the right buyers, generate competitive offers, and close at the highest possible price.</p>
+        <a href="home-valuation.html" class="btn btn-primary" style="margin-top:0.5rem;">GET A FREE HOME VALUATION</a>
+      </div>
+      <div class="page-intro-stats">
+        <div class="page-stat">
+          <div class="page-stat-num">$75M+</div>
+          <div class="page-stat-label">Career Sales Volume</div>
+        </div>
+        <div class="page-stat">
+          <div class="page-stat-num">Top 3%</div>
+          <div class="page-stat-label">REALTORS® in San Diego County</div>
+        </div>
+        <div class="page-stat">
+          <div class="page-stat-num">100%</div>
+          <div class="page-stat-label">5-Star Client Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY QUESTIONS -->
+  <div class="page-section">
+    <div class="page-section-header">
+      <p class="section-eyebrow" style="color:#B38987;">Before You List</p>
+      <h2>KEY QUESTIONS TO CONSIDER</h2>
+      <p>Before putting your home on the market, Lynnette walks every seller through these critical questions to make sure you're set up for success.</p>
+    </div>
+    <div class="questions-grid">
+      <div class="question-card">
+        <h3>Do I know what my home is actually worth?</h3>
+        <p>Online estimates like Zestimates are notoriously inaccurate — sometimes off by 10–20%. A personalized Comparative Market Analysis from Lynnette gives you a real number based on actual recent sales in your neighborhood.</p>
+      </div>
+      <div class="question-card">
+        <h3>Is my home ready to show?</h3>
+        <p>First impressions drive offers. Lynnette will walk through your home and provide a customized pre-listing plan — from decluttering and staging to repairs that deliver the highest return on investment.</p>
+      </div>
+      <div class="question-card">
+        <h3>Am I clear on my net proceeds?</h3>
+        <p>Understanding your closing costs, agent commissions, and any outstanding mortgage balance helps you plan what comes next — whether that's buying another home or relocating entirely.</p>
+      </div>
+      <div class="question-card">
+        <h3>Where am I going after I sell?</h3>
+        <p>Selling without a plan for your next move can create stress and rushed decisions. Lynnette helps coordinate your timeline so selling and buying align seamlessly.</p>
+      </div>
+      <div class="question-card">
+        <h3>Do I understand today's market conditions?</h3>
+        <p>Is it a buyer's or seller's market right now? How many days are homes sitting? What's the list-to-sale ratio in your neighborhood? Lynnette briefs every seller on market conditions before making any decisions.</p>
+      </div>
+      <div class="question-card">
+        <h3>Do I have a marketing strategy?</h3>
+        <p>Price it right. Photograph it beautifully. Promote it everywhere. The Jaiswal Group's marketing plan combines professional photography, social media, targeted digital advertising, and the MLS to maximize exposure.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELLER ADVANTAGES -->
+  <div style="background:#F3EFE8;">
+    <div class="advantage-strip">
+      <div class="page-section-header">
+        <p class="section-eyebrow" style="color:#B38987;">Why Sellers Choose Lynnette</p>
+        <h2>THE JAISWAL GROUP DIFFERENCE</h2>
+        <p>What sets a good sale apart from a great one? Experience, strategy, and a relentless commitment to your result.</p>
+      </div>
+      <div class="advantage-grid">
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 17"/><path d="M17 6h6v6"/></svg>
+          </div>
+          <h3>Strategic Pricing</h3>
+          <p>Pricing too high sits. Pricing too low leaves money on the table. Lynnette's data-driven pricing strategy attracts serious buyers and generates competitive offers from day one.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>Premium Marketing</h3>
+          <p>Professional photography, video tours, targeted social media campaigns, and maximum MLS exposure — your home will look its best and reach the right buyers.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Powerful Negotiation</h3>
+          <p>With 14 professional designations including MCNE (Master Certified Negotiation Expert), Lynnette is trained to protect your equity and negotiate the strongest possible terms.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Concierge Experience</h3>
+          <p>From pre-listing prep to closing day, you'll have direct access to Lynnette — not an assistant. Every detail is managed so your experience is seamless and stress-free.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Local Market Knowledge</h3>
+          <p>Lynnette lives and works in San Diego's most desirable communities. She knows the neighborhoods, the buyer pools, and exactly what drives value in your specific area.</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Fast, Smooth Closings</h3>
+          <p>Lynnette's vendor network — from stagers and photographers to contractors and title companies — means your home gets to market faster and closes on time, every time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEPS -->
+  <section class="steps-section">
+    <div class="steps-inner">
+      <div class="page-section-header">
+        <p class="section-eyebrow" style="color:#B38987;">The Selling Process</p>
+        <h2>HOW WE SELL YOUR HOME</h2>
+        <p style="color:rgba(255,255,255,0.65);">A proven, step-by-step approach designed to maximize your home's value and minimize stress.</p>
+      </div>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Seller Consultation</h3>
+            <p>We start with a private conversation about your goals, timeline, and financial expectations. No pressure — just clarity.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Home Valuation & Pricing Strategy</h3>
+            <p>Lynnette prepares a comprehensive Comparative Market Analysis and recommends a pricing strategy designed to generate strong offers quickly.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Pre-Listing Preparation</h3>
+            <p>We walk your home together and create a customized action plan — staging, repairs, curb appeal — to present your home at its absolute best.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Professional Photography & Marketing Launch</h3>
+            <p>High-end photography, video, 3D tours, and a full marketing campaign go live — creating buzz before the home even hits the market.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Offers & Negotiation</h3>
+            <p>Lynnette reviews all offers with you in detail, negotiates strongly on your behalf, and helps you choose the best offer — not just the highest number.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <h3>Escrow & Closing</h3>
+            <p>We manage every step of escrow — inspections, repairs, appraisals, and paperwork — so closing day is smooth and on schedule.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div>
+    <div class="page-cta">
+      <div class="page-cta-text">
+        <h2>Ready to Talk About Selling?</h2>
+        <p>There's no obligation — just an honest conversation about what your home is worth and what a sale could look like for you. Lynnette will come to you, answer every question, and give you a clear picture of your options.</p>
+        <p><strong>Call or text:</strong> <a href="tel:8586634896" style="color:#B38987;">(858) 663-4896</a></p>
+        <a href="home-valuation.html" class="btn btn-primary">GET YOUR FREE HOME VALUATION</a>
+      </div>
+      <div class="page-cta-form">
+        <form id="seller-cta-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email Address" required />
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="text" name="address" placeholder="Property Address (optional)" />
+          <button type="submit">REQUEST A SELLER CONSULTATION</button>
+          <p class="consent-text">By submitting, you agree to be contacted by The Jaiswal Group Real Estate. <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        </form>
+        <div class="cta-success" id="seller-cta-success">
+          <h4>We'll Be in Touch Shortly!</h4>
+          <p>Thank you for reaching out. Lynnette will contact you soon to schedule your free seller consultation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK WITH US -->
+  <section class="work-with-us">
+    <div class="wwu-content">
+      <h2>WORK WITH US</h2>
+      <p>Choosing the right representation matters.</p>
+      <p>At The Jaiswal Group Real Estate, every client receives a tailored, concierge-level approach — from exclusive opportunities and strategic negotiation to responsive communication and thoughtful guidance throughout every step of the process.</p>
+      <p>Our goal is simple: to help you feel confident, informed, and well-supported from beginning to end.</p>
+      <p>Every client relationship is personal, intentional, and backed by a team that genuinely cares about your goals and outcome.</p>
+      <p>Let's explore what's possible.</p>
+      <a href="contact.html" class="btn btn-primary">CONTACT US</a>
+    </div>
+    <div class="wwu-photo">
+      <img src="Lynnette-torreypinesbackground.jpg" alt="Lynnette Jaiswal, The Jaiswal Group Real Estate" />
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Footer contact info row -->
+    <div class="footer-info">
+
+      <!-- Logo column -->
+      <div class="footer-info-col footer-info-col--logo">
+        <img src="LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" />
+      </div>
+
+      <!-- Office Address -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p>
+          <p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p>
+          <p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem; white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem; white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">EMAIL</p>
+          <p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">PHONE</p>
+          <p><a href="tel:8586634896">(858) 663-4896</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; 2026 The Jaiswal Group Real Estate</span>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="#">Site Map</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@lynnettejaiswalrealtor" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lynnettejaiswalrealtor/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://g.page/r/CadNwKvRi2DDEBM/review" aria-label="Google Reviews" class="footer-social-text" target="_blank" rel="noopener">G</a>
+        <a href="https://www.zillow.com/profile/Lynnette%20Jaiswal" aria-label="Zillow" class="footer-social-text" target="_blank" rel="noopener">Z</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    document.getElementById('seller-cta-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('seller-cta-success').style.display = 'block';
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

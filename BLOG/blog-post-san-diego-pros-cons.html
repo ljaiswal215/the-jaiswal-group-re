@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pros and Cons of Living in San Diego, California | The Jaiswal Group Real Estate</title>
+  <meta name="description" content="Thinking of moving to San Diego? Lynnette Jaiswal shares an honest look at the top pros and cons of life in America's Finest City." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+
+    /* ── Post Header ── */
+    .post-header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .post-header-photo {
+      position: absolute;
+      inset: 0;
+    }
+    .post-header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    .post-header-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(24,37,75,0.45);
+    }
+    .post-header-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+    .post-header-meta-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.5rem clamp(2rem, 6vw, 6rem);
+      text-align: center;
+    }
+    .post-category-tag {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B38987;
+      border: 1px solid rgba(179,137,135,0.4);
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .post-header h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .post-meta span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      background: #B38987;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Post Title ── */
+    .post-title {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #18254B;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Post Body ── */
+    .post-body {
+      background: #F6F6F4;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+    .post-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* ── Video Embed ── */
+    .post-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1C3063;
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .post-video-play {
+      width: 64px;
+      height: 64px;
+      background: rgba(179,137,135,0.2);
+      border: 2px solid #B38987;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .post-video-play svg {
+      width: 24px;
+      height: 24px;
+      fill: #B38987;
+      margin-left: 4px;
+    }
+    .post-video p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+    }
+
+    /* ── Snippet Answer Box ── */
+    .post-snippet {
+      background: #fff;
+      border-left: 4px solid #B38987;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-snippet strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.5rem;
+    }
+    .post-snippet p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #322E2D;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Post Content Typography ── */
+    .post-content p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: #3a3634;
+      margin-bottom: 1.25rem;
+    }
+    .post-content h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: #18254B;
+      letter-spacing: 0.05em;
+      margin: 2.5rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(179,137,135,0.25);
+    }
+    .post-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1C3063;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .post-content a {
+      color: #B38987;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content a:hover { color: #1C3063; }
+
+    /* ── Pro/Con Labels ── */
+    .post-content h3.pro::before {
+      content: '✦ ';
+      color: #B38987;
+    }
+    .post-content h3.con::before {
+      content: '— ';
+      color: #1C3063;
+    }
+
+    /* ── Divider ── */
+    .post-divider {
+      width: 50px;
+      height: 1px;
+      background: #B38987;
+      margin: 2.5rem 0;
+    }
+
+    /* ── FAQ Section ── */
+    .post-faq {
+      background: #fff;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .post-faq h2 {
+      font-family: 'Marcellus', serif;
+      font-size: 1.4rem;
+      color: #18254B;
+      margin-bottom: 1.5rem;
+      border: none;
+      padding: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(179,137,135,0.2);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1C3063;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #3a3634;
+      margin: 0;
+    }
+
+    /* ── Author CTA ── */
+    .post-author-cta {
+      background: #18254B;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .post-author-cta p.eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 0.75rem;
+    }
+    .post-author-cta h3 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .post-author-cta p.body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+
+    /* ── Back to Blog (top) ── */
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #B38987;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .post-back:hover { gap: 0.7rem; }
+
+    /* ── Post Navigation (bottom) ── */
+    .post-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(28,48,99,0.12);
+      margin-bottom: 2rem;
+    }
+    .post-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1C3063;
+      text-decoration: none;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .post-nav-link:hover { gap: 0.7rem; color: #B38987; }
+
+    @media (max-width: 600px) {
+      .post-faq { padding: 1.5rem; }
+      .post-author-cta { padding: 2rem 1.5rem; }
+    }
+
+  </style>
+</head>
+<body class="light-hero">
+
+  <!-- =========================================================
+       HEADER / NAV
+  ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="../logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="#">BUY A HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Featured Listings</a></li>
+            <li><a href="#">Search for Homes</a></li>
+            <li><a href="#">New Construction</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+            <li><a href="#">Buyer FAQ</a></li>
+            <li><a href="#">Mortgage Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Seller Consultation</a></li>
+            <li><a href="#">Instant Home Valuation</a></li>
+            <li><a href="#">Our Marketing</a></li>
+            <li><a href="#">Seller's Guide</a></li>
+            <li><a href="#">Selling Checklist</a></li>
+          </ul>
+        </li>
+        <li><a href="#">COMMUNITIES</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li class="has-dropdown">
+          <a href="#">RESOURCES <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Market Updates</a></li>
+            <li><a href="#">The Plugged In Method</a></li>
+            <li><a href="#">Recommended Lenders</a></li>
+            <li><a href="#">Relocation Guide</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">ABOUT US <span class="caret">&#9662;</span></a>
+          <ul class="dropdown">
+            <li><a href="#">Lynnette Jaiswal</a></li>
+            <li><a href="../testimonials.html">Client Reviews</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#">Buy a Home</a></li>
+        <li><a href="#">Sell Your Home</a></li>
+        <li><a href="#">Communities</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       POST HEADER
+  ========================================================= -->
+  <section class="post-header">
+    <div class="post-header-photo">
+      <img src="../sandiego.jpg" alt="Luxury living room with ocean view in San Diego, California" />
+    </div>
+    <div class="post-header-inner">
+      <h1>The Pros and Cons of Living in<br>San Diego, California</h1>
+    </div>
+    <div class="post-header-meta-bar">
+      <div class="post-meta">
+        <span>Lynnette Jaiswal</span>
+        <span class="post-meta-dot"></span>
+        <span>The Jaiswal Group Real Estate</span>
+        <span class="post-meta-dot"></span>
+        <span>San Diego, CA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       POST BODY
+  ========================================================= -->
+  <div class="post-body">
+    <div class="post-container">
+
+      <a href="blog.html" class="post-back">&#8592; Back to Blog</a>
+
+      <h1 class="post-title">The Pros and Cons of Living in San Diego, California</h1>
+
+      <!-- VIDEO — paste YouTube iframe here when ready:
+      <div class="post-video">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          title="The Pros and Cons of Living in San Diego, California" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;"></iframe>
+      </div>
+      -->
+
+      <!-- SNIPPET ANSWER -->
+      <div class="post-snippet">
+        <strong>Quick Answer</strong>
+        <p>San Diego offers year-round sunshine, world-class beaches, and one of the most family-friendly environments in the country — but it also comes with a higher cost of living, limited public transit, and seasonal tourism that can affect daily life.</p>
+      </div>
+
+      <!-- POST CONTENT -->
+      <div class="post-content">
+
+        <p>If you've been dreaming about moving to San Diego, you're not alone. People from all over the country — and the world — are drawn here by the promise of sunshine, ocean breezes, and a relaxed pace of life. And honestly? A lot of that reputation is well-deserved.</p>
+
+        <p>But as someone who lives and works here every single day as a San Diego REALTOR®, I think it's important to give you the full picture before you make one of the biggest decisions of your life. So here's my honest take: five things I genuinely love about San Diego, and five things you should know before you make the move.</p>
+
+        <p>Let's start with the good stuff.</p>
+
+        <div class="post-divider"></div>
+
+        <h2>The Pros of Living in San Diego</h2>
+
+        <h3 class="pro">The Weather</h3>
+        <p>No surprise here — San Diego's weather is legendary, and it absolutely lives up to the hype. We're talking a comfortable 75 degrees year-round, with warm, sunny days that practically beg you to get outside. If you're tired of shoveling snow, scraping windshields, or suffering through humid summers, San Diego is your answer. You really can wear shorts and flip-flops almost every day of the year if you want to.</p>
+
+        <h3 class="pro">World-Class Beaches</h3>
+        <p>San Diego has some of the most beautiful beaches in the United States — and they're not just for looking at. The Pacific Ocean here is warm enough to swim, boogie board, and body surf without a wetsuit for most of the year. Surfing is practically a way of life, and beyond that you've got kayaking at La Jolla Shores, paddleboarding on the bay, and jet skiing at Fiesta Island.</p>
+        <p>San Diego is also wonderfully pet-friendly. Dog beaches like Del Mar and Ocean Beach mean your four-legged family members get to enjoy the coast too. One of my personal favorites is Del Mar Beach at 15th Street near Seagrove Park — easy parking, gorgeous views, and just steps from the charming Village of Del Mar with fantastic restaurants and boutique shops right nearby.</p>
+
+        <h3 class="pro">An Active, Outdoor Lifestyle</h3>
+        <p><a href="https://www.usnews.com/news/healthiest-communities/rankings" target="_blank" rel="noopener">San Diego consistently ranks among the healthiest cities in the U.S.</a>, and you'll understand why the moment you get here. Beyond the beaches, there are endless biking and hiking trails — the most famous being Torrey Pines State Natural Reserve. Add in Peñasquitos Canyon, Los Peñasquitos Lagoon, Anza-Borrego Desert State Park to the east, and mountain towns like Julian and Big Bear nearby, and you have an outdoor playground that is genuinely hard to beat.</p>
+        <p>The lifestyle here is relaxed and intentional. People prioritize time outside, time with family, and time enjoying where they live. That energy is contagious — and it's exactly why I love calling San Diego home.</p>
+
+        <h3 class="pro">Rich Culture and History</h3>
+        <p>San Diego may be a relatively young city, but it has remarkable cultural depth. <a href="https://www.balboapark.org/" target="_blank" rel="noopener">Balboa Park</a> is the largest urban cultural park in the United States — over 1,200 acres that house 15 major museums, art galleries, beautiful gardens, and the Old Globe Theater. It's also home to the world-famous San Diego Zoo.</p>
+        <p>Old Town San Diego, the first European settlement in California, offers a fascinating glimpse into the city's history. And the Cabrillo National Monument at the tip of the Point Loma Peninsula is one of the most stunning viewpoints in all of San Diego County.</p>
+
+        <h3 class="pro">San Diego Is Incredibly Family-Friendly</h3>
+        <p>This is my personal favorite — and if you have kids, it might be yours too. Between the San Diego Zoo, the Safari Park in Escondido, SeaWorld, LEGOLAND California, Birch Aquarium at Scripps, the tide pools at La Jolla Cove, the San Diego Botanic Garden, and the Children's Museums in both Escondido and downtown, you will never run out of things to do as a family.</p>
+        <p>And if that still isn't enough — Disneyland, California Adventure, and Knott's Berry Farm are just an hour to an hour and a half up the freeway. San Diego is genuinely one of the best places in the country to raise children.</p>
+
+        <div class="post-divider"></div>
+
+        <h2>The Cons of Living in San Diego</h2>
+
+        <h3 class="con">Cost of Living</h3>
+        <p>Let's be honest — San Diego is not cheap. It currently ranks among the <a href="https://www.numbeo.com/cost-of-living/in/San-Diego" target="_blank" rel="noopener">top 10 most expensive cities in America</a>, and housing is the biggest factor. The median home price in San Diego County is approximately $900,000+, though that number varies significantly depending on where you're looking.</p>
+        <p>Coastal communities like La Jolla, Del Mar, Carmel Valley, Solana Beach, Encinitas, and Carlsbad command premium prices. If you're looking for more space for your budget, inland areas like Rancho Peñasquitos, Rancho Bernardo, Escondido, San Marcos, and Vista offer more home for your money. The key is knowing what you need — which is exactly what I help my clients figure out every day.</p>
+
+        <h3 class="con">Limited Seasons</h3>
+        <p>This one is a con for some and a pro for others, but it's worth mentioning. San Diego doesn't really have four distinct seasons. It's warm, sunny, and dry for most of the year, with a handful of rainy days between November and February. Evenings can dip into the 30s in winter, and inland areas can see triple-digit heat during summer heat waves and Santa Ana wind events — which also bring fire risk.</p>
+        <p>If you love the changing leaves of fall or a snowy winter, San Diego won't give you that at home. You can chase those experiences at nearby Big Bear or Julian, but it won't be right outside your door.</p>
+
+        <h3 class="con">Traffic and Getting Around</h3>
+        <p>San Diego is a sprawling city, and while there are walkable neighborhoods — Pacific Highlands Ranch, Hillcrest, North Park, South Park — you will almost certainly need a car. Public transportation exists (the trolley, the Coaster train along the coast, the Sprinter in North County), but it's limited compared to more urban metros.</p>
+        <p>Highway congestion can get heavy, particularly 7–10 AM and 3–6 PM on weekdays. It's nowhere near Los Angeles levels, but it's real — and worth factoring into your commute planning when choosing where to live.</p>
+
+        <h3 class="con">Tourism</h3>
+        <p>San Diego is a major vacation destination, and the crowds peak from May through September. More visitors means more traffic, fuller restaurants, and busier beaches. If you thrive on a quiet hometown feel, the summer months can test your patience. That said, most locals find their rhythm around it — and honestly, living somewhere people want to visit is a pretty good problem to have.</p>
+
+        <h3 class="con">Limited Major Sports Teams</h3>
+        <p>If you're a die-hard sports fan, San Diego's professional sports scene is limited. The San Diego Padres are our MLB team and a source of genuine civic pride — and Petco Park is one of the best stadiums in the country. But we lost the NFL's Chargers, and we've been waiting for another team ever since.</p>
+        <p>The silver lining: Petco Park doubles as a world-class entertainment venue that hosts major concerts and events year-round. And San Diego State University athletics — especially football and basketball — give fans a strong college sports culture to rally around.</p>
+
+        <div class="post-divider"></div>
+
+        <!-- POST NAVIGATION -->
+        <div class="post-nav-bar">
+          <a href="blog.html" class="post-nav-link">&#8592; Previous Post</a>
+          <a href="blog.html" class="post-nav-link">Next Post &#8594;</a>
+        </div>
+
+        <!-- FAQ -->
+        <div class="post-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <strong>Is San Diego a good place to raise a family?</strong>
+            <p>Yes — San Diego is widely considered one of the best cities in the U.S. for families. Between its outdoor lifestyle, world-class family attractions, relatively safe suburban communities, and year-round weather, it consistently ranks among the top family-friendly metros in the country.</p>
+          </div>
+          <div class="faq-item">
+            <strong>How expensive is it to buy a home in San Diego?</strong>
+            <p>The median home price in San Diego County is approximately $900,000+, but prices vary widely by location. Coastal communities command the highest prices, while inland areas offer more affordability. Working with a local expert is the best way to find options that fit your lifestyle and budget.</p>
+          </div>
+          <div class="faq-item">
+            <strong>What neighborhoods in San Diego are best for relocating families?</strong>
+            <p>Popular choices include Carmel Valley, Pacific Highlands Ranch, Del Sur, Rancho Bernardo, Encinitas, and Carlsbad — each offering a strong sense of community, accessibility, and a range of housing options to suit different budgets.</p>
+          </div>
+        </div>
+
+        <!-- AUTHOR CTA -->
+        <div class="post-author-cta">
+          <p class="eyebrow">Thinking About Making the Move?</p>
+          <h3>Let's Find Your Place in San Diego</h3>
+          <p class="body">San Diego truly is one of the most special places to live in this country. Whether you're drawn here by the weather, the beaches, the job market, or just a feeling — I'd love to help you find your place here. I help families relocate to San Diego every single day, and there's nothing I enjoy more.</p>
+          <a href="../contact.html" class="btn btn-outline-light">GET IN TOUCH</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       WORK WITH US
+  ========================================================= -->
+  <section class="work-with-us">
+    <div class="wwu-content">
+      <h2>WORK WITH US</h2>
+      <p>Choosing the right representation matters.</p>
+      <p>At The Jaiswal Group Real Estate, every client receives a tailored, concierge-level approach — from exclusive opportunities and strategic negotiation to responsive communication and thoughtful guidance throughout every step of the process.</p>
+      <p>Our goal is simple: to help you feel confident, informed, and well-supported from beginning to end.</p>
+      <p>Every client relationship is personal, intentional, and backed by a team that genuinely cares about your goals and outcome.</p>
+      <p>Let's explore what's possible.</p>
+      <a href="../contact.html" class="btn btn-primary">CONTACT US</a>
+    </div>
+    <div class="wwu-photo">
+      <img src="../Lynnette-torreypinesbackground.jpg" alt="Lynnette Jaiswal, The Jaiswal Group Real Estate" />
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-info-col footer-info-col--logo">
+        <img src="../LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" />
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p>
+          <p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p>
+          <p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem; white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem; white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">EMAIL</p>
+          <p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p>
+        </div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        </div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">PHONE</p>
+          <p><a href="tel:8586634896">(858) 663-4896</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="../logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="../logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="../logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>&copy; 2026 The Jaiswal Group Real Estate</span>
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="#">Site Map</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        <a href="https://www.tiktok.com/@lynnettejaiswalrealtor" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+        <a href="https://www.linkedin.com/in/lynnettejaiswalrealtor/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://g.page/r/CadNwKvRi2DDEBM/review" aria-label="Google Reviews" class="footer-social-text" target="_blank" rel="noopener">G</a>
+        <a href="https://www.zillow.com/profile/Lynnette%20Jaiswal" aria-label="Zillow" class="footer-social-text" target="_blank" rel="noopener">Z</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
