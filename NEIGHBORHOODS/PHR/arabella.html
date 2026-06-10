@@ -327,9 +327,42 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="subdiv-faq" id="section-faq">
+    <div class="subdiv-faq-inner">
+      <p class="section-eyebrow">FREQUENTLY ASKED</p>
+      <h2>ABOUT ARABELLA</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3>What is Arabella at Pacific Highlands Ranch?</h3>
+          <p>Arabella is a community of 132 single-family homes in Pacific Highlands Ranch, San Diego (ZIP 92130), developed by Pardee Homes in 2005. Homes range from 2,007 to 2,453 square feet with 3 to 4 bedrooms. Residents enjoy exclusive access to the West Highland Pacific Recreation Center, direct connectivity to PHR's trail network, and walkable proximity to The Village at Pacific Highlands Ranch.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What schools are zoned for Arabella?</h3>
+          <p>Students in Arabella attend Solana Ranch Elementary, Pacific Trails Middle School, and either Canyon Crest Academy or Torrey Pines High School &mdash; within the <a href="https://www.sbsd.k12.ca.us" target="_blank" rel="noopener">Solana Beach School District</a> and <a href="https://www.sduhsd.net" target="_blank" rel="noopener">San Dieguito Union High School District</a>.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How far is Arabella from the beach?</h3>
+          <p>Arabella sits less than 4.5 miles from the Pacific Ocean, giving residents easy access to Del Mar's beaches and the mild, marine-influenced climate that defines life in coastal San Diego. It's inland enough for generous lot sizes, yet close enough to feel the ocean breeze every day.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is Arabella part of an HOA?</h3>
+          <p>Yes. Arabella is governed by the <a href="https://www.mywhp.com/" target="_blank" rel="noopener">West Highlands Pacific HOA</a>, which oversees shared amenities including the private recreation center with a Junior Olympic pool, spa, fitness room, and water play area. Reach out to us for current HOA fee information and governing documents.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        IDX LISTINGS
   ═══════════════════════════════════════════════════════════════ -->
-  <section class="subdiv-listings">
+  <section class="subdiv-listings" id="section-listings">
     <div class="subdiv-listings-inner">
       <p class="section-eyebrow">ACTIVE LISTINGS</p>
       <h2>HOMES FOR SALE IN ARABELLA</h2>
@@ -363,39 +396,6 @@
         </form>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       FAQ
-  ═══════════════════════════════════════════════════════════════ -->
-  <section class="subdiv-faq">
-    <div class="subdiv-faq-inner">
-      <p class="section-eyebrow">FREQUENTLY ASKED</p>
-      <h2>ABOUT ARABELLA</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <h3>What is Arabella at Pacific Highlands Ranch?</h3>
-          <p>Arabella is a community of 132 single-family homes in Pacific Highlands Ranch, San Diego (ZIP 92130), developed by Pardee Homes in 2005. Homes range from 2,007 to 2,453 square feet with 3 to 4 bedrooms. Residents enjoy exclusive access to the West Highland Pacific Recreation Center, direct connectivity to PHR's trail network, and walkable proximity to The Village at Pacific Highlands Ranch.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>What schools are zoned for Arabella?</h3>
-          <p>Students in Arabella attend Solana Ranch Elementary, Pacific Trails Middle School, and either Canyon Crest Academy or Torrey Pines High School &mdash; within the <a href="https://www.sbsd.k12.ca.us" target="_blank" rel="noopener">Solana Beach School District</a> and <a href="https://www.sduhsd.net" target="_blank" rel="noopener">San Dieguito Union High School District</a>.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>How far is Arabella from the beach?</h3>
-          <p>Arabella sits less than 4.5 miles from the Pacific Ocean, giving residents easy access to Del Mar's beaches and the mild, marine-influenced climate that defines life in coastal San Diego. It's inland enough for generous lot sizes, yet close enough to feel the ocean breeze every day.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Is Arabella part of an HOA?</h3>
-          <p>Yes. Arabella is governed by the <a href="https://www.mywhp.com/" target="_blank" rel="noopener">West Highlands Pacific HOA</a>, which oversees shared amenities including the private recreation center with a Junior Olympic pool, spa, fitness room, and water play area. Reach out to us for current HOA fee information and governing documents.</p>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -444,6 +444,29 @@
 
   <script src="../../main.js"></script>
   <script>
+    /* ── Auto-swap FAQ / Listings order based on IDX results ──────────────
+       When IDX is live: replace the hasListings condition below with the
+       selector that wraps actual listing results — e.g.:
+         document.querySelector('.ihf-results-count') !== null
+       Remove "false &&" once IDX is connected and the selector is confirmed.
+    ─────────────────────────────────────────────────────────────────────── */
+    function reorderSections() {
+      const faq      = document.getElementById('section-faq');
+      const listings = document.getElementById('section-listings');
+      if (!faq || !listings) return;
+
+      // TODO: swap "false &&" for real IDX results selector when IDX is live
+      const hasListings = false && document.querySelector('.idx-active-results') !== null;
+
+      if (hasListings) {
+        listings.parentNode.insertBefore(listings, faq);   // Listings → FAQ
+      } else {
+        listings.parentNode.insertBefore(faq, listings);   // FAQ → Listings (default)
+      }
+    }
+    document.addEventListener('DOMContentLoaded', reorderSections);
+    new MutationObserver(reorderSections).observe(document.body, {childList:true, subtree:true});
+
     const notifyForm = document.getElementById('notify-form');
     if(notifyForm){
       notifyForm.addEventListener('submit', async function(e){
