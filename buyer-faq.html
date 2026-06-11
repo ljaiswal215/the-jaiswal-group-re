@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buyer FAQ | The Jaiswal Group Real Estate</title>
+  <meta name="description" content="Answers to the most common home buying questions in San Diego — from pre-approval to closing day. The Jaiswal Group Real Estate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── Hero ─────────────────────────────────────────────────────── */
+    .faq-hero {
+      background: #18254B;
+      padding: clamp(10rem,14vw,13rem) clamp(1.5rem,5vw,5rem) clamp(5rem,7vw,7rem);
+      text-align: center;
+      position: relative;
+    }
+    .faq-hero .section-eyebrow { color: #B38987; margin-bottom: 1rem; }
+    .faq-hero h1 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2.4rem,5vw,3.8rem);
+      color: #fff;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .faq-hero h1 span { color: #B38987; }
+    .faq-hero-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.68);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    /* ── Intro Strip ──────────────────────────────────────────────── */
+    .faq-intro {
+      background: #F3EFE8;
+      padding: clamp(2.5rem,4vw,3.5rem) clamp(1.5rem,5vw,5rem);
+      text-align: center;
+    }
+    .faq-intro p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      color: #3a4a6b;
+      line-height: 1.95;
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+    }
+    .faq-intro a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #B38987;
+      text-decoration: none;
+      border-bottom: 1px solid #B38987;
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .faq-intro a:hover { color: #18254B; border-color: #18254B; }
+
+    /* ── FAQ Accordion ────────────────────────────────────────────── */
+    .faq-section {
+      background: #fff;
+      padding: clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,5rem);
+    }
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(28,48,99,0.12);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid rgba(28,48,99,0.12);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.75rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-question-text {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(0.95rem,1.5vw,1.1rem);
+      color: #18254B;
+      letter-spacing: 0.03em;
+      line-height: 1.45;
+    }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 0.15rem;
+      stroke: #B38987;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.32s ease;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
+    }
+    .faq-item.open .faq-answer { grid-template-rows: 1fr; }
+    .faq-answer-inner {
+      overflow: hidden;
+      padding-bottom: 0;
+      transition: padding-bottom 0.35s ease;
+    }
+    .faq-item.open .faq-answer-inner { padding-bottom: 2rem; }
+    .faq-answer-inner p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: #3a4a6b;
+      line-height: 1.95;
+      margin-bottom: 0.9rem;
+    }
+    .faq-answer-inner p:last-child { margin-bottom: 0; }
+
+    /* ── Bottom CTA Strip ─────────────────────────────────────────── */
+    .faq-cta-strip {
+      background: #18254B;
+      padding: clamp(3.5rem,6vw,6rem) clamp(1.5rem,5vw,5rem);
+      text-align: center;
+    }
+    .faq-cta-strip .section-eyebrow { color: #B38987; margin-bottom: 0.75rem; }
+    .faq-cta-strip h2 {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(1.5rem,2.8vw,2.2rem);
+      color: #fff;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+    .faq-cta-strip p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.9;
+      max-width: 520px;
+      margin: 0 auto 2.25rem;
+    }
+    .faq-cta-strip .faq-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .faq-cta-strip a.btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: #B38987;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.22s;
+    }
+    .faq-cta-strip a.btn-primary:hover { background: #9a7270; }
+    .faq-cta-strip a.btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: border-color 0.22s, color 0.22s;
+    }
+    .faq-cta-strip a.btn-secondary:hover { border-color: #B38987; color: #B38987; }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .faq-hero { padding-top: 8rem; }
+      .faq-question { padding: 1.4rem 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="header-top"><div class="social-icons">
+      <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+    </div></div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="LOGOS/JaiswalGroupRE_white.png" class="logo-white" alt="The Jaiswal Group Real Estate" />
+        <img src="logo.png" class="logo-color" alt="The Jaiswal Group Real Estate" />
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown"><a href="#">BUY A HOME <span class="caret">&#9662;</span></a><ul class="dropdown"><li><a href="#">Featured Listings</a></li><li><a href="#">Search for Homes</a></li><li><a href="#">New Construction</a></li><li><a href="buyers-guide.html">Buyer's Guide</a></li><li><a href="buyer-faq.html">Buyer FAQ</a></li><li><a href="#">Mortgage Calculator</a></li></ul></li>
+        <li class="has-dropdown"><a href="#">SELL YOUR HOME <span class="caret">&#9662;</span></a><ul class="dropdown"><li><a href="#">Seller Consultation</a></li><li><a href="home-valuation.html">Instant Home Valuation</a></li><li><a href="#">Our Marketing</a></li><li><a href="deciding-to-sell.html">Seller's Guide</a></li><li><a href="#">Selling Checklist</a></li></ul></li>
+        <li><a href="neighborhoods.html">COMMUNITIES</a></li>
+        <li><a href="BLOG/blog.html">BLOG</a></li>
+        <li class="has-dropdown"><a href="#">RESOURCES <span class="caret">&#9662;</span></a><ul class="dropdown"><li><a href="#">Market Updates</a></li><li><a href="#">The Plugged In Method</a></li><li><a href="#">Recommended Lenders</a></li><li><a href="#">Relocation Guide</a></li></ul></li>
+        <li class="has-dropdown"><a href="#">ABOUT US <span class="caret">&#9662;</span></a><ul class="dropdown"><li><a href="#">Lynnette Jaiswal</a></li><li><a href="testimonials.html">Client Reviews</a></li><li><a href="#">Join Our Team</a></li></ul></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="nav-phone"><a href="tel:8586634896">(858) 663-4896</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu"><ul>
+      <li><a href="#">Buy a Home</a></li><li><a href="#">Sell Your Home</a></li>
+      <li><a href="neighborhoods.html">Communities</a></li><li><a href="BLOG/blog.html">Blog</a></li>
+      <li><a href="#">Resources</a></li><li><a href="#">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li><li><a href="tel:8586634896">(858) 663-4896</a></li>
+    </ul></div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="faq-hero">
+    <p class="section-eyebrow">BUYER RESOURCES</p>
+    <h1>BUYER <span>FAQ</span></h1>
+    <p class="faq-hero-sub">San Diego home buying questions — answered with honesty, clarity, and care.</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       INTRO STRIP
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="faq-intro">
+    <p>Whether you're buying your first home or your fifth, the process always comes with questions. We've answered the most common ones below so you can move forward with confidence. And if you don't see your question here, we're always just a call or text away.</p>
+    <a href="buyers-guide.html">Download Our Free San Diego Home Buyer's Guide &rarr;</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQ ACCORDION
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="faq-container">
+
+      <!-- 01 -->
+      <div class="faq-item open">
+        <button class="faq-question" aria-expanded="true">
+          <span class="faq-question-text">What is the first step in the home buying process?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>If you're planning to finance your home purchase, the very first step is getting pre-approved with a trusted lender. This not only gives you clarity on your budget, but also positions you as a serious buyer — something that's especially important in a competitive market like ours. In fact, many sellers won't consider an offer without a pre-approval letter on file.</p>
+            <p>A pre-approval gives you insight into your purchasing power, so you're only viewing homes that align with your goals. It also protects you from the disappointment of falling in love with homes outside your budget. Beyond that, a great lender will help you understand how much you'll need for your down payment, closing costs, and whether you may qualify for any financial assistance programs.</p>
+            <p>We work closely with a vetted network of trusted lenders who can guide you through the pre-approval process with clarity and care. We're happy to connect you when you're ready!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">Why should I buy a home instead of renting one?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>When you buy a home, you're investing in your own future — not someone else's. While renting can seem more flexible short-term, buying often results in long-term financial benefits like building equity, tax deductions, and stable monthly payments.</p>
+            <p>We'll help you explore low down payment options, grant programs, and long-term cost savings to ensure homeownership is a smart and accessible step forward for you and your family.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">I have my pre-qualification — what's next?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Congratulations! You're officially ready to start the home search — and we're honored to be part of it. We'll begin with a strategy session to dive deeper into what matters most to you: location, lifestyle, schools, commute, must-haves, and nice-to-haves.</p>
+            <p>From there, we'll set you up with a personalized home search that includes real-time alerts, curated recommendations, and access to off-market opportunities. Our team is quick to respond and highly accessible — because in a competitive market, timing is everything.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">How do I search for a home?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>We recommend using platforms that connect directly with the MLS to give you the most accurate, up-to-date listings. Many popular home search websites often show outdated or sold properties, which can be frustrating.</p>
+            <p>When you work with us, we'll set you up with a custom MLS search tailored to your criteria — and we'll also notify you of off-market listings or upcoming opportunities you won't find online. It's all part of our full-service experience at The Jaiswal Group Real Estate.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">I found the perfect home — now what?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>When you've found the one, it's go time — and our job is to act quickly while protecting your best interests. We'll run a full market analysis to determine a fair and competitive offer price, then draft a strong, clean offer that reflects your goals.</p>
+            <p>We can prepare and submit your offer within hours — even on weekends or after business hours. If we're facing multiple offers, we'll coach you through how to make yours stand out. Our experience ensures your offer is well-positioned for success.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is an earnest money deposit?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>An earnest money deposit is a way to show a seller you're serious about purchasing their home. Once your offer is accepted, this deposit is typically submitted within 48 hours and held in escrow until closing.</p>
+            <p>While the amount can vary, it's often around 1–3% of the purchase price, and sometimes more. A larger deposit can strengthen your offer, signaling strong intent and financial readiness. Don't worry — this money is credited back to you at closing. If something goes wrong due to a contingency (like an inspection or loan issue), your deposit is usually refundable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">Should I get a home inspection?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Absolutely. A home inspection is a crucial part of your due diligence — and we always recommend it. You'll typically have 5–10 days after your offer is accepted (depending on what is negotiated in the contract) to complete all due diligence inspections, including general, termite, and others such as roof, foundation, pool and spa, solar, mold, and/or sewer line evaluations based on the property's features.</p>
+            <p>A general home inspection can help you uncover any red flags so you can make informed decisions. The cost varies ($550–$800+), but it's a small investment for peace of mind on one of your biggest purchases. Additional inspections vary in price depending on the type.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is an appraisal?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>An appraisal is a professional evaluation of the home's value — required by your lender to ensure they're not lending more than the property is worth. It must be completed by a licensed, independent appraiser with no ties to the buyer, seller, or agents involved.</p>
+            <p>The appraisal is typically ordered by the lender and paid for by the buyer as part of closing costs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">How quickly can I get the keys?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Most escrows close in 21–30 days, depending on negotiated terms. This timeline allows for inspections, the appraisal, final loan approval, and all necessary paperwork.</p>
+            <p>However, signing closing documents doesn't mean you get the keys right away. Ownership officially transfers once the county records the sale — which can happen anytime during the day, depending on how busy the recorder's office is. Until it records, the property legally remains in the seller's name.</p>
+            <p>Because we can't predict the exact time recording will happen, we strongly recommend scheduling your movers for the day after closing to avoid any last-minute issues. This gives you breathing room and ensures a smoother transition into your new home.</p>
+            <p>Also, if there's a seller rent-back agreement as part of the contract, the actual date you get your keys may be delayed based on the terms negotiated. Don't worry — we stay on top of all the details and keep you informed at every step, so you'll always know what to expect.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">I already own a home — can I buy and sell at the same time?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes, and it's more common than you might think — especially for families looking to move up or relocate. If you need the equity from your current home to purchase your next one, the process can be a bit more complex, but with the right strategy and coordination, it's absolutely doable.</p>
+            <p>At The Jaiswal Group Real Estate, we specialize in managing seamless buy/sell transitions. We'll help you understand your options, such as contingent offers or back-to-back closings, and create a customized game plan based on your timeline and financial needs. Strong communication, careful planning, and expert negotiation are key — and that's where our experience comes in.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">How much do I have to pay a Realtor to help me buy a house?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>With recent industry changes, it's important to know that all agent compensation is negotiable — and we're here to help you navigate it with clarity and confidence.</p>
+            <p>While the buyer ultimately funds the entire transaction, including commissions, our goal is to negotiate our compensation into the purchase agreement, whenever possible. This helps minimize your out-of-pocket expenses without compromising the expert representation you deserve.</p>
+            <p>We believe in transparency, strategy, and putting your financial interests first — every step of the way.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">Should I use my friend or relative as my real estate agent?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>This is a common — and important — question. While it might feel natural to hire someone you know, your home purchase is one of the largest financial decisions you'll make. You need a proven professional who can advocate for you, handle the complexities of negotiation, and protect your best interests every step of the way.</p>
+            <p>If your friend or relative happens to be that trusted expert, great! But if not, it's okay to choose someone based on experience, availability, and market knowledge. Real friends will respect your decision to put your family's needs first.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">Do I need a Realtor when buying a new construction home?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes, 100%. Builders have their own sales teams who represent the builder — not you. If you walk into a model home without your Realtor, you may forfeit your right to be represented.</p>
+            <p>We've helped many clients purchase new construction and know what to look for — from lot selection to incentives, timelines, and contract terms. We'll walk with you every step of the way and ensure your best interests are protected. Always contact us before visiting a new home community.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What are your thoughts on discount agents?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>It's tempting to think you'll save money with a discount broker — but when it comes to real estate, you often get what you pay for. This is a major financial transaction, and cutting corners on experience, service, or negotiation could cost you far more in the long run.</p>
+            <p>At The Jaiswal Group Real Estate, we offer full-service representation designed to deliver results, save you stress, and protect your investment. Our clients consistently tell us the value we bring far outweighs any discount alternative.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BOTTOM CTA
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="faq-cta-strip">
+    <p class="section-eyebrow">LET'S CONNECT</p>
+    <h2>STILL HAVE QUESTIONS?</h2>
+    <p>We're always happy to talk through your specific situation — no pressure, no obligation. Just honest guidance from a team that puts your interests first.</p>
+    <div class="faq-cta-buttons">
+      <a href="contact.html" class="btn-primary">SCHEDULE A FREE CONSULTATION</a>
+      <a href="buyers-guide.html" class="btn-secondary">DOWNLOAD THE BUYER'S GUIDE</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-info">
+      <div class="footer-info-col footer-info-col--logo"><img src="LOGOS/JaiswalGroupRE_white.png" alt="The Jaiswal Group Real Estate" class="footer-logo" /></div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="footer-info-text">
+          <p class="footer-info-label">OFFICE ADDRESS</p><p>5450 INDIGO SAGE DRIVE<br>SAN DIEGO, CA 92130</p>
+          <p class="footer-info-label" style="margin-top:1.25rem;">MAILING ADDRESS</p><p>PO BOX 3102<br>RANCHO SANTA FE, CA 92067</p>
+          <p style="margin-top:1rem;white-space:nowrap;">LYNNETTE JAISWAL &nbsp;|&nbsp; CA DRE #02100367</p>
+          <p style="margin-top:0.4rem;white-space:nowrap;">THE JAISWAL GROUP, INC &nbsp;|&nbsp; CA DRE #02251231</p>
+        </div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+        <div class="footer-info-text"><p class="footer-info-label">EMAIL</p><p><a href="mailto:Lynnette@thejaiswalgroup.com">LYNNETTE@THEJAISWALGROUP.COM</a></p></div>
+      </div>
+      <div class="footer-info-col">
+        <div class="footer-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg></div>
+        <div class="footer-info-text"><p class="footer-info-label">PHONE</p><p><a href="tel:8586634896">(858) 663-4896</a></p></div>
+      </div>
+    </div>
+    <div class="footer-disclaimer-block">
+      <p>The Jaiswal Group Real Estate is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number #02251231. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to accuracy of any description. All measurements and square footage are approximate.</p>
+      <div class="footer-compliance-logos">
+        <img src="logorealtor.png" alt="Realtor" class="footer-compliance-logo" />
+        <img src="logoEHO.png" alt="Equal Housing Opportunity" class="footer-compliance-logo" />
+        <img src="logo-NSDCAR.png" alt="North San Diego County Realtors" class="footer-compliance-logo" />
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left"><span>&copy; 2026 The Jaiswal Group Real Estate</span><a href="privacy-policy.html">Privacy Policy</a><a href="#">Site Map</a></div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/LynnetteJaiswalRealtor" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/lynnettejaiswalrealtor/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/@LynnetteJaiswalRealtor" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        <a href="https://www.tiktok.com/@lynnettejaiswalrealtor" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+        <a href="https://www.linkedin.com/in/lynnettejaiswalrealtor/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://g.page/r/CadNwKvRi2DDEBM/review" aria-label="Google Reviews" class="footer-social-text" target="_blank" rel="noopener">G</a>
+        <a href="https://www.zillow.com/profile/Lynnette%20Jaiswal" aria-label="Zillow" class="footer-social-text" target="_blank" rel="noopener">Z</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // ── FAQ Accordion ────────────────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // Close all open items
+        document.querySelectorAll('.faq-item.open').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Open this one if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
