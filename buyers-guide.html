@@ -233,9 +233,11 @@
     }
     .bg-success h3 {
       font-family: 'Marcellus', serif;
-      font-size: 1.1rem;
+      font-size: 1.35rem;
       color: #18254B;
-      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-bottom: 0.65rem;
     }
     .bg-success p {
       font-family: 'Raleway', sans-serif;
@@ -505,7 +507,7 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>Your Guide is Ready!</h3>
-
+            <p>Your guide has been downloaded. Save it somewhere easy to find so you can refer back to it anytime.</p>
             <div class="bg-success-actions">
               <a href="BuyersGuide.pdf" class="btn-primary" target="_blank" rel="noopener">OPEN YOUR BUYER'S GUIDE &rarr;</a>
               <span class="bg-success-divider">then</span>
@@ -626,7 +628,7 @@
             bgForm.style.display = 'none';
             bgSuccess.style.display = 'block';
             document.getElementById('bg-form-heading').textContent = 'YOUR INSTANT ACCESS IS HERE';
-            document.getElementById('bg-form-subtext').textContent = 'Your guide has been downloaded. Save it somewhere easy to find so you can refer back to it anytime.';
+            document.getElementById('bg-form-subtext').style.display = 'none';
             // Also trigger automatic download
             const link = document.createElement('a');
             link.href = 'BuyersGuide.pdf';
