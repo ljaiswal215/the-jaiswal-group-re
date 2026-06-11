@@ -72,8 +72,13 @@
       line-height: 1.95;
       margin-bottom: 1rem;
     }
-    .faq-hero-body p:last-child { margin-bottom: 2rem; }
+    .faq-hero-body p:last-child { margin-bottom: 0; }
     .faq-hero-btn {
+      position: absolute;
+      bottom: clamp(2.5rem,4vw,4rem);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
       display: inline-block;
       padding: 1rem 2.5rem;
       font-family: 'Raleway', sans-serif;
@@ -81,12 +86,13 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      background: #B38987;
-      color: #fff;
+      background: #fff;
+      color: #18254B;
       text-decoration: none;
-      transition: background 0.22s;
+      white-space: nowrap;
+      transition: background 0.22s, color 0.22s;
     }
-    .faq-hero-btn:hover { background: #9a7270; }
+    .faq-hero-btn:hover { background: #18254B; color: #B38987; }
 
     /* ── Intro Strip ──────────────────────────────────────────────── */
     .faq-intro {
@@ -295,8 +301,8 @@
     <div class="faq-hero-body">
       <p>At The Jaiswal Group Real Estate, buying a home should feel empowering — not overwhelming. These tips reflect the same honest, strategic guidance we bring to every client: clarity over confusion, confidence over guesswork, and a proven path to the keys.</p>
       <p>San Diego's market is competitive. We make sure you're ready for it.</p>
-      <a href="buyers-guide.html" class="faq-hero-btn">ACCESS BUYER'S GUIDE &rarr;</a>
     </div>
+    <a href="buyers-guide.html" class="faq-hero-btn">ACCESS BUYER'S GUIDE &rarr;</a>
   </section>
 
 
