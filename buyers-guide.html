@@ -506,7 +506,6 @@
             <div class="bg-success-icon">
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h3>Your Guide is Ready!</h3>
             <p>Your guide has been downloaded. Save it somewhere easy to find so you can refer back to it anytime.</p>
             <div class="bg-success-actions">
               <a href="BuyersGuide.pdf" class="btn-primary" target="_blank" rel="noopener">OPEN YOUR BUYER'S GUIDE &rarr;</a>
@@ -627,7 +626,7 @@
           if (response.ok) {
             bgForm.style.display = 'none';
             bgSuccess.style.display = 'block';
-            document.getElementById('bg-form-heading').textContent = 'YOUR INSTANT ACCESS IS HERE';
+            document.getElementById('bg-form-heading').textContent = 'YOUR GUIDE IS READY';
             document.getElementById('bg-form-subtext').style.display = 'none';
             // Also trigger automatic download
             const link = document.createElement('a');
