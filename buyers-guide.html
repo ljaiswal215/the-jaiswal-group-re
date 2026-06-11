@@ -14,10 +14,14 @@
     /* ── Hero ─────────────────────────────────────────────────────── */
     .bg-hero {
       background: #18254B url('background-buyer-guide-lead-magnet.jpg') center center / cover no-repeat;
-      padding: clamp(5rem,9vw,7rem) clamp(1.5rem,5vw,5rem) clamp(4rem,7vw,6rem);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: clamp(7rem,10vw,9rem) clamp(1.5rem,5vw,5rem) clamp(5rem,7vw,7rem);
       position: relative;
       overflow: hidden;
     }
+    @media(max-width:600px){ .bg-hero{ min-height: 0; } }
     .bg-hero::before {
       content: '';
       position: absolute;
@@ -28,6 +32,7 @@
     .bg-inner {
       position: relative;
       z-index: 1;
+      width: 100%;
       max-width: 1160px;
       margin: 0 auto;
       display: grid;
