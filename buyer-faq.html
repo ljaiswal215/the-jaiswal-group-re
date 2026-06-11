@@ -256,7 +256,8 @@
       justify-content: center;
       flex-wrap: wrap;
     }
-    .faq-cta-strip a.btn-primary {
+    .faq-cta-strip a.btn-primary,
+    .faq-cta-strip a.btn-secondary {
       display: inline-block;
       padding: 1rem 2.5rem;
       font-family: 'Raleway', sans-serif;
@@ -266,25 +267,12 @@
       text-transform: uppercase;
       background: #18254B;
       color: #fff;
+      border: none;
       text-decoration: none;
       transition: background 0.22s, color 0.22s;
     }
-    .faq-cta-strip a.btn-primary:hover { background: #1C3063; color: #B38987; }
-    .faq-cta-strip a.btn-secondary {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      font-family: 'Raleway', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      background: transparent;
-      color: #18254B;
-      border: 1.5px solid #18254B;
-      text-decoration: none;
-      transition: background 0.22s, color 0.22s;
-    }
-    .faq-cta-strip a.btn-secondary:hover { background: #18254B; color: #B38987; }
+    .faq-cta-strip a.btn-primary:hover,
+    .faq-cta-strip a.btn-secondary:hover { background: #1C3063; color: #B38987; }
 
     /* ── Responsive ───────────────────────────────────────────────── */
     @media (max-width: 600px) {
