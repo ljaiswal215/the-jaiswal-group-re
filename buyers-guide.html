@@ -244,9 +244,16 @@
       line-height: 1.8;
       margin-bottom: 1.25rem;
     }
-    .bg-success a {
+    .bg-success-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .bg-success a.btn-primary {
       display: inline-block;
-      padding: 0.85rem 2rem;
+      width: 100%;
+      padding: 0.95rem 2rem;
       font-family: 'Raleway', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
@@ -255,9 +262,34 @@
       background: #18254B;
       color: #fff;
       text-decoration: none;
+      text-align: center;
       transition: background 0.22s, color 0.22s;
     }
-    .bg-success a:hover { background: #1C3063; color: #B38987; }
+    .bg-success a.btn-primary:hover { background: #1C3063; color: #B38987; }
+    .bg-success-divider {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      color: rgba(28,48,99,0.35);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .bg-success a.btn-secondary {
+      display: inline-block;
+      width: 100%;
+      padding: 0.95rem 2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: transparent;
+      color: #18254B;
+      border: 1.5px solid #18254B;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.22s, color 0.22s;
+    }
+    .bg-success a.btn-secondary:hover { background: #18254B; color: #B38987; }
 
     /* ── Testimonial Strip ────────────────────────────────────────── */
     .bg-testimonial {
@@ -452,8 +484,12 @@
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>Your Guide is Ready!</h3>
-            <p>Click below to open your San Diego Home Buyer's Guide. We'll also be in touch should you have any questions along the way.</p>
-            <a href="BuyersGuide.pdf" target="_blank" rel="noopener">OPEN YOUR GUIDE &rarr;</a>
+            <p>Your San Diego Home Buyer's Guide is downloading now. Want to go even deeper? Watch the full step-by-step video series — free, no sign-up required.</p>
+            <div class="bg-success-actions">
+              <a href="BuyersGuide.pdf" class="btn-primary" target="_blank" rel="noopener">OPEN YOUR GUIDE &rarr;</a>
+              <span class="bg-success-divider">then</span>
+              <a href="buyers-guide-videos.html" class="btn-secondary">WATCH THE VIDEO SERIES &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
